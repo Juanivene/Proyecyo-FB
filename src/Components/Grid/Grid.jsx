@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import {
   AlignContentTypes,
   AlignItemsTypes,
@@ -11,11 +11,9 @@ import {
   VerticalAlignTypes,
   XlColTypes,
   XsColTypes,
-} from './grid.enums';
+} from "./grid.enums";
 
-import { cn, removeLineBreaks } from '@/lib/utils';
-
-
+import { cn, removeLineBreaks } from "../../lib/utils.js";
 
 /**
  * A custom Grid component.
@@ -45,24 +43,24 @@ import { cn, removeLineBreaks } from '@/lib/utils';
  * ```
  */
 
-const Grid = (props)=> {
+const Grid = (props) => {
   const {
-    alignContent = '',
-    alignItems = '',
+    alignContent = "",
+    alignItems = "",
     children,
-    className = '',
-    component: Component = 'div',
+    className = "",
+    component: Component = "div",
     container = false,
     gap = 0,
     item = false,
-    justifyContent = '',
+    justifyContent = "",
     xl,
     lg,
     md,
     rowSpan = 1,
     sm,
     xs,
-    verticalAlign = '',
+    verticalAlign = "",
     useScreen = false,
     ...rest
   } = props;
@@ -70,11 +68,11 @@ const Grid = (props)=> {
   const classes = () => {
     if (container) {
       return cn(
-        removeLineBreaks`grid grid-cols-12 ${!useScreen ? '@container' : ''}
-      ${gap ? GapTypes[gap] : ''}
-      ${alignContent ? AlignContentTypes[alignContent] : ''}
-      ${alignItems ? AlignItemsTypes[alignItems] : ''}
-      ${justifyContent ? JustifyContentTypes[justifyContent] : ''}
+        removeLineBreaks`grid grid-cols-12 ${!useScreen ? "@container" : ""}
+      ${gap ? GapTypes[gap] : ""}
+      ${alignContent ? AlignContentTypes[alignContent] : ""}
+      ${alignItems ? AlignItemsTypes[alignItems] : ""}
+      ${justifyContent ? JustifyContentTypes[justifyContent] : ""}
       ${RowSpanTypes[rowSpan]}
       `,
         className
@@ -84,20 +82,20 @@ const Grid = (props)=> {
     if (item && xs) {
       return cn(
         removeLineBreaks`${XsColTypes[xs]}
-        ${xl ? XlColTypes[xl] : ''}
-        ${lg ? LgColTypes[lg] : ''}
-        ${md ? MdColTypes[md] : ''}
-        ${sm ? SmColTypes[sm] : ''}
-        ${verticalAlign ? VerticalAlignTypes[verticalAlign] : ''}
-        ${alignContent ? AlignContentTypes[alignContent] : ''}
-        ${alignItems ? AlignItemsTypes[alignItems] : ''}
-        ${justifyContent ? JustifyContentTypes[justifyContent] : ''}
+        ${xl ? XlColTypes[xl] : ""}
+        ${lg ? LgColTypes[lg] : ""}
+        ${md ? MdColTypes[md] : ""}
+        ${sm ? SmColTypes[sm] : ""}
+        ${verticalAlign ? VerticalAlignTypes[verticalAlign] : ""}
+        ${alignContent ? AlignContentTypes[alignContent] : ""}
+        ${alignItems ? AlignItemsTypes[alignItems] : ""}
+        ${justifyContent ? JustifyContentTypes[justifyContent] : ""}
       `,
         className
       );
     }
 
-    return '';
+    return "";
   };
 
   return (
@@ -110,31 +108,37 @@ const Grid = (props)=> {
 export default Grid;
 Grid.propTypes = {
   alignContent: PropTypes.oneOf([
-    'around',
-    'baseline',
-    'between',
-    'center',
-    'end',
-    'evenly',
-    'normal',
-    'start',
-    'stretch',
+    "around",
+    "baseline",
+    "between",
+    "center",
+    "end",
+    "evenly",
+    "normal",
+    "start",
+    "stretch",
   ]),
-  alignItems: PropTypes.oneOf(['baseline', 'center', 'end', 'start', 'stretch']),
+  alignItems: PropTypes.oneOf([
+    "baseline",
+    "center",
+    "end",
+    "start",
+    "stretch",
+  ]),
   children: PropTypes.node,
   className: PropTypes.string,
   component: PropTypes.oneOfType([
     PropTypes.oneOf([
-      'div',
-      'span',
-      'section',
-      'article',
-      'main',
-      'header',
-      'footer',
-      'form',
-      'ul',
-      'li',
+      "div",
+      "span",
+      "section",
+      "article",
+      "main",
+      "header",
+      "footer",
+      "form",
+      "ul",
+      "li",
     ]),
     PropTypes.elementType,
   ]),
@@ -142,14 +146,14 @@ Grid.propTypes = {
   gap: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 8, 10]),
   item: PropTypes.bool,
   justifyContent: PropTypes.oneOf([
-    'around',
-    'between',
-    'center',
-    'end',
-    'evenly',
-    'normal',
-    'start',
-    'stretch',
+    "around",
+    "between",
+    "center",
+    "end",
+    "evenly",
+    "normal",
+    "start",
+    "stretch",
   ]),
   xl: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
   lg: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
@@ -158,12 +162,12 @@ Grid.propTypes = {
   xs: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
   rowSpan: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
   verticalAlign: PropTypes.oneOf([
-    'auto',
-    'baseline',
-    'center',
-    'end',
-    'start',
-    'stretch',
+    "auto",
+    "baseline",
+    "center",
+    "end",
+    "start",
+    "stretch",
   ]),
   useScreen: PropTypes.bool,
 };
