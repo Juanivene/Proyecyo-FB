@@ -4,10 +4,13 @@ import "./main.css";
 
 import { RouterProvider } from "react-router-dom";
 import { router } from "./Constants/Routes";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-// const queryClient = new QueryClient(); pendiente
+const queryClint = new QueryClient();
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClint}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </StrictMode>
 );
