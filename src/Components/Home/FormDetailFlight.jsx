@@ -1,16 +1,32 @@
 import { useForm } from "react-hook-form";
+import Alert from "./Alert";
 
 const FormDetailFlight = () => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const today = new Date().toISOString().split("T")[0];
+  const year = today.split("-")[0];
+  const month = today.split("-")[1];
+  const day = today.split("-")[2];
+  const nextYear = (parseInt(year) + 1).toString();
+  const oneYearLater = `${day}-${month}-${nextYear}`;
+
+  const origin = watch("origin");
 
   const onSubmit = (data) => {
     const { date, destination, origin } = data;
+    console.log(date, destination, origin);
 
     window.location.href = `http://localhost:5173/flight?origen=${origin}&destino=${destination}&fecha=${date}`;
   };
 
   return (
-    <div className="card bg-yellow-200 shadow-lg p-6 rounded-lg my-8 mx-4">
+    <div className="card bg-yellow-200 shadow-lg p-6 rounded-lg  mx-6 my-6">
       <div className="card-body">
         <h2 className="card-title text-2xl font-bold text-gray-800 mb-4">
           Buscar vuelos
@@ -26,14 +42,21 @@ const FormDetailFlight = () => {
             <select
               className="select select-bordered w-full bg-white border-gray-300"
               name="origin"
-              {...register("origin")}
+              {...register("origin", {
+                required: "Este campo es requerido",
+              })}
             >
-              <option value="buenosaires">Buenos Aires</option>
-              <option value="bariloche">Bariloche</option>
+              <option value="Tucuman">Tucuman</option>
+              <option value="Bariloche">Bariloche</option>
               <option value="mendoza">Mendoza</option>
-              <option value="tucuman">Tucuman</option>
-              <option value="cordoba">Cordoba</option>
+              <option value="Buenos aires">Buenos Aires</option>
+              <option value="Cordoba">Cordoba</option>
             </select>
+            {errors.origin && (
+              <div className="mt-2">
+                <Alert messege={errors.origin?.message} />
+              </div>
+            )}
           </div>
 
           <div className="form-control">
@@ -44,14 +67,23 @@ const FormDetailFlight = () => {
               className="select select-bordered w-full bg-white border-gray-300"
               {...register}
               name="destination"
-              {...register("destination")}
+              {...register("destination", {
+                required: "Este campo es requerido",
+                validate: (value) =>
+                  value !== origin || "El destino no puede ser igual al origen",
+              })}
             >
-              <option value="buenosaires">Buenos Aires</option>
-              <option value="bariloche">Bariloche</option>
+              <option value="Buenos aires">Buenos Aires</option>
+              <option value="Bariloche">Bariloche</option>
               <option value="mendoza">Mendoza</option>
-              <option value="tucuman">Tucuman</option>
-              <option value="cordoba">Cordoba</option>
+              <option value="Tucuman">Tucuman</option>
+              <option value="Cordoba">Cordoba</option>
             </select>
+            {errors.destination && (
+              <div className="mt-2">
+                <Alert messege={errors.destination?.message} />
+              </div>
+            )}
           </div>
 
           <div className="form-control">
@@ -62,8 +94,23 @@ const FormDetailFlight = () => {
               type="date"
               className="input input-bordered  w-full bg-white border-gray-300"
               name="date"
-              {...register("date")}
+              {...register("date", {
+                required: "Seleccione una fecha",
+                validate: {
+                  today: (value) =>
+                    value > today ||
+                    "No se pueden elegir fechas pasadas ni de este dia",
+                  oneYear: (value) =>
+                    value <= nextYear ||
+                    `Tenemos vuelos hasta el ${oneYearLater} `,
+                },
+              })}
             />
+            {errors.date && (
+              <div className="mt-2">
+                <Alert messege={errors.date?.message} />
+              </div>
+            )}
           </div>
 
           <div className="form-control">
