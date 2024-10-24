@@ -1,10 +1,14 @@
-// import { useQuery } from "@tanstack/react-query";
+import { useForm } from "react-hook-form";
 
-const FormDestination = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("form origen y destino enviado");
+const FormDetailFlight = () => {
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = (data) => {
+    const { date, destination, origin } = data;
+
+    window.location.href = `http://localhost:5173/flight?origen=${origin}&destino=${destination}&fecha=${date}`;
   };
+
   return (
     <div className="card bg-yellow-200 shadow-lg p-6 rounded-lg my-8 mx-4">
       <div className="card-body">
@@ -12,19 +16,23 @@ const FormDestination = () => {
           Buscar vuelos
         </h2>
         <form
-          onSubmit={handleSubmit}
+          onSubmit={handleSubmit(onSubmit)}
           className="grid grid-cols-1 md:grid-cols-2 gap-4"
         >
           <div className="form-control">
             <label className="label">
               <span className="label-text text-gray-700">Origen</span>
             </label>
-            <select className="select select-bordered w-full bg-white border-gray-300">
-              <option>Buenos Aires</option>
-              <option>Bariloche</option>
-              <option>Mendoza</option>
-              <option>Tucuman</option>
-              <option>Cordoba</option>
+            <select
+              className="select select-bordered w-full bg-white border-gray-300"
+              name="origin"
+              {...register("origin")}
+            >
+              <option value="buenosaires">Buenos Aires</option>
+              <option value="bariloche">Bariloche</option>
+              <option value="mendoza">Mendoza</option>
+              <option value="tucuman">Tucuman</option>
+              <option value="cordoba">Cordoba</option>
             </select>
           </div>
 
@@ -32,12 +40,17 @@ const FormDestination = () => {
             <label className="label">
               <span className="label-text text-gray-700">Destino</span>
             </label>
-            <select className="select select-bordered w-full bg-white border-gray-300">
-              <option>Buenos Aires</option>
-              <option>Bariloche</option>
-              <option>Mendoza</option>
-              <option>Tucuman</option>
-              <option>Cordoba</option>
+            <select
+              className="select select-bordered w-full bg-white border-gray-300"
+              {...register}
+              name="destination"
+              {...register("destination")}
+            >
+              <option value="buenosaires">Buenos Aires</option>
+              <option value="bariloche">Bariloche</option>
+              <option value="mendoza">Mendoza</option>
+              <option value="tucuman">Tucuman</option>
+              <option value="cordoba">Cordoba</option>
             </select>
           </div>
 
@@ -47,8 +60,9 @@ const FormDestination = () => {
             </label>
             <input
               type="date"
-              placeholder="Type here"
               className="input input-bordered  w-full bg-white border-gray-300"
+              name="date"
+              {...register("date")}
             />
           </div>
 
@@ -68,4 +82,4 @@ const FormDestination = () => {
   );
 };
 
-export default FormDestination;
+export default FormDetailFlight;

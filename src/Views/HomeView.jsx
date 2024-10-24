@@ -1,13 +1,11 @@
 import Carousel from "../Components/Home/Carousel";
-// import CardDestination from "../Components/Home/Destination/CardDestination";
-import FormDestination from "../Components/Home/Destination/FormDestination";
+import FormDetailFlight from "../Components/Home/FormDetailFlight";
 
 const HomeView = () => {
   return (
     <section className="bg-yellow-100">
       <Carousel />
-      <FormDestination />
-      {/* <CardDestination /> */}
+      <FormDetailFlight />
     </section>
   );
 };
