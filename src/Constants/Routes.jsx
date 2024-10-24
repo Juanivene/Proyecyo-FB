@@ -27,10 +27,10 @@ export const router = createBrowserRouter([
         path: "/destinations",
         element: <DestinationsView />,
       },
-      {
-        path: "/config/:id",
-        element: <HomeView />,
-      },
+      // {
+      //   path: "/config/:id",
+      //   element: <HomeView />,
+      // },
       {
         path: "/flight",
         element: <FlightView />,

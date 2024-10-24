@@ -5,7 +5,6 @@ const Carousel = () => {
   return (
     <div className="carousel w-full ">
       {urlsImages.map((url, i) => {
-        // Calcular los id previos y siguientes, asegurando el ciclo al principio y al final
         const prevId = `slide${
           (i - 1 + urlsImages.length) % urlsImages.length
         }`;
