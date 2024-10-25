@@ -14,14 +14,13 @@ const FormDetailFlight = () => {
   const month = today.split("-")[1];
   const day = today.split("-")[2];
   const nextYear = (parseInt(year) + 1).toString();
-  const oneYearLater = `${day}-${month}-${nextYear}`;
+  const oneYearLater = `${nextYear}-${month}-${day}`;
+  const dateFlights = `${day - 1}-${month}-${nextYear}`;
 
   const origin = watch("origin");
 
   const onSubmit = (data) => {
     const { date, destination, origin } = data;
-    console.log(date, destination, origin);
-
     window.location.href = `http://localhost:5173/flight?origen=${origin}&destino=${destination}&fecha=${date}`;
   };
 
@@ -101,8 +100,8 @@ const FormDetailFlight = () => {
                     value > today ||
                     "No se pueden elegir fechas pasadas ni de este dia",
                   oneYear: (value) =>
-                    value <= nextYear ||
-                    `Tenemos vuelos hasta el ${oneYearLater} `,
+                    value <= oneYearLater ||
+                    `Tenemos vuelos hasta el ${dateFlights} `,
                 },
               })}
             />
