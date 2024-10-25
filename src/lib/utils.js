@@ -1,9 +1,9 @@
-import {  clsx } from "clsx";
+import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
-export function cn(...inputs) {
+export const cn = (...inputs) => {
   return twMerge(clsx(inputs));
-}
+};
 
 /**
  * Usage with template literals. To call the function, do not use parentheses.
