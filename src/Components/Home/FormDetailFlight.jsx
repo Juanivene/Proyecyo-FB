@@ -48,8 +48,8 @@ const FormDetailFlight = () => {
             >
               <option value="Tucuman">Tucuman</option>
               <option value="Bariloche">Bariloche</option>
-              <option value="mendoza">Mendoza</option>
-              <option value="Buenos aires">Buenos Aires</option>
+              <option value="Mendoza">Mendoza</option>
+              <option value="Buenos Aires">Buenos Aires</option>
               <option value="Cordoba">Cordoba</option>
             </select>
             {errors.origin && (

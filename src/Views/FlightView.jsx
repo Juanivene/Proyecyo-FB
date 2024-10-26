@@ -1,4 +1,4 @@
-import ContentFlight from "../Components/Flight/ContentFlight/ContentFlight";
+import ContentFlight from "../Components/Flight/ContentFlight";
 import HeaderFlight from "../Components/Flight/HeaderFlight";
 
 const FlightView = () => {
@@ -10,7 +10,6 @@ const FlightView = () => {
   return (
     <>
       <HeaderFlight origin={origin} destination={destination} date={date} />
-
       <ContentFlight origin={origin} destination={destination} date={date} />
     </>
   );

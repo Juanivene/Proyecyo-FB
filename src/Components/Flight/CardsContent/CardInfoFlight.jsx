@@ -23,8 +23,8 @@ const CardInfoFlight = (props) => {
       break;
   }
   return (
-    <section className="w-72 shadow-xl">
-      <div className="card rounded-none rounded-t-xl  ">
+    <section className=" w-80 shadow-xl rounded-b-xl">
+      <div className="card rounded-none rounded-t-xl ">
         <figure>
           <img src={url} alt="DestinationImage" />
         </figure>
