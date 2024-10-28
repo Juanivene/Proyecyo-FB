@@ -1,13 +1,17 @@
 import { create } from "zustand";
+let urlParams = new URLSearchParams(window.location.search);
+let originParam = urlParams.get("origen");
+let destinationParam = urlParams.get("destino");
+
 
 export const useFlights = create((set) => ({
   flightSelected: {
-    id: "FO1234",
-    origin: "Tucuman",
-    destination: "Buenos Aires",
-    price: "80.999",
-    duration: "2h 30m",
-    hour: ["21:00", "23:30"]
+    id: "",
+    origin: originParam,
+    destination: destinationParam,
+    price: "",
+    duration: "",
+    hour: "",
   },
   changeCard: (flightSelected) =>
     set({
@@ -17,7 +21,7 @@ export const useFlights = create((set) => ({
         destination: flightSelected.destination,
         price: flightSelected.price,
         duration: flightSelected.duration,
-        hour: flightSelected.hour
+        hour: flightSelected.hour,
       },
     }),
 }));

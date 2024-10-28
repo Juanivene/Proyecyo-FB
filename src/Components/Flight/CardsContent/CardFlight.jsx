@@ -3,7 +3,9 @@ import { useFlights } from "../../../Store/useFlight";
 
 const CardFlight = (props) => {
   const { flightsDay } = props;
-  const { changeCard } = useFlights();
+  const { changeCard, flightSelected } = useFlights();
+
+  const isSelected = flightSelected.id === flightsDay.id;
 
   return (
     <div className="card w-full bg-base-100 shadow-2xl flex flex-col md:flex-row p-4">
@@ -24,7 +26,7 @@ const CardFlight = (props) => {
         </div>
       </div>
 
-      <div className="flex items-center md:justify-center md:justify-start md:w-1/3 my-4 ">
+      <div className="flex items-center sm:justify-center md:justify-start  md:w-1/3 my-4 ">
         <div className="flex items-center space-x-2">
           <span className="text-yellow-500">{flightsDay.duration}</span>
           <span className="text-gray-400">{flightsDay.id}</span>
@@ -37,7 +39,9 @@ const CardFlight = (props) => {
       </div>
       <button
         onClick={() => changeCard(flightsDay)}
-        className="btn btn-warning text-lg mt-8 mx-2"
+        className={`btn ${
+          isSelected ? "btn-success" : "btn-warning"
+        } text-lg mt-8 mx-2`}
       >
         Tarifa: ${flightsDay.price}
       </button>

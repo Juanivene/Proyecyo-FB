@@ -6,7 +6,6 @@ const CardInfoFlight = (props) => {
   const { flightSelected, dateString } = props;
 
   let url;
-  console.log(flightSelected);
   switch (flightSelected.destination) {
     case "Buenos Aires":
       url = urlsImages[0];
@@ -23,6 +22,8 @@ const CardInfoFlight = (props) => {
     case "Cordoba":
       url = urlsImages[4];
       break;
+    default:
+      url = urlsImages[0];
   }
   return (
     <section className=" w-80 shadow-xl rounded-b-xl">
@@ -32,10 +33,17 @@ const CardInfoFlight = (props) => {
         </figure>
         <div className="card-body">
           <h2 className="card-title">Vuelo {flightSelected.id}</h2>
-          <p>Desde: {flightSelected.origin}-{flightSelected.hour[0]}</p>
-          <p>Hasta: {flightSelected.destination}-{flightSelected.hour[1]}</p>
+          <p>
+            Desde: {flightSelected.origin}
+            {flightSelected.id === "" ? "" : "-"}
+            {flightSelected.hour[0]}
+          </p>
+          <p>
+            Hasta: {flightSelected.destination}
+            {flightSelected.id === "" ? "" : "-"}
+            {flightSelected.hour[1]}
+          </p>
           <p>Fecha de salida: {dateString}</p>
-          <p> {}</p>
           <p>Duracion: {flightSelected.duration}</p>
         </div>
       </div>

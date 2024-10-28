@@ -8,6 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getFlightFn } from "../../api/flight";
 import Skeleton from "./CardsContent/Skeleton";
 import { useFlights } from "../../Store/useFlight";
+import { Link } from "react-router-dom";
 
 const ContentFlight = (props) => {
   const { origin, destination, date } = props;
@@ -30,6 +31,8 @@ const ContentFlight = (props) => {
 
   const { flightSelected, changeCard } = useFlights();
 
+ 
+
   if (isLoading) {
     return <Skeleton />;
   }
@@ -49,12 +52,12 @@ const ContentFlight = (props) => {
 
   return (
     <Grid container gap={8} className="py-10">
-      <Grid item xs={12} lg={8} className="space-y-4">
+      <Grid item xs={12} lg={8}>
         <div className="mb-2">
           <h1 className="text-2xl font-bold px-3 py-2">{dateString}</h1>
         </div>
-        <div className="space-y-4 mx-10">
-          {flights.map((flight) => {
+        <div className="space-y-4 mx-10 mb-10">
+          {flightsDay.map((flight) => {
             return (
               <CardFlight
                 key={flight.id}
@@ -66,10 +69,12 @@ const ContentFlight = (props) => {
           })}
 
           <div className="flex justify-center md:justify-between ">
-            <button className="btn btn-wide hidden md:block">
-              Seleccionar otra fecha
-            </button>
-            <button className="btn btn-active btn-wide ">Continuar</button>
+            <Link to="/" className="link link-warning">
+              Cambiar fecha
+            </Link>
+            <Link to="/pay" className="btn btn-active btn-wide ">
+              Continuar
+            </Link>
           </div>
         </div>
         <div className="mx-10">
@@ -77,7 +82,7 @@ const ContentFlight = (props) => {
         </div>
       </Grid>
       <Grid item>
-        <div className="hidden md:block ">
+        <div className="hidden md:block">
           <CardInfoFlight
             flightSelected={flightSelected}
             dateString={dateString}

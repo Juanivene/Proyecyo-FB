@@ -5,6 +5,7 @@ import FlightView from "../Views/FlightView";
 import ReservationView from "../Views/ReservationView";
 import InfoView from "../Views/InfoView";
 import DestinationsView from "../Views/DestinationsView";
+import PayView from "../Views/PayView";
 
 export const router = createBrowserRouter([
   {
@@ -37,7 +38,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/pay",
-        element: <HomeView />,
+        element: <PayView />,
       },
       {
         path: "confirmation",

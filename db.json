@@ -4,8 +4,8 @@
       "id": "FO1234",
       "origin": "Tucuman",
       "destination": "Buenos Aires",
-      "aitaCode": ["TUC","AEP"],
-      "date": "2024-10-29",
+      "aitaCode": ["TUC", "AEP"],
+      "date": "2024-12-01",
       "hour": ["21:00", "23:30"],
       "duration": "2h 30m",
       "price": "80.999"
@@ -14,11 +14,32 @@
       "id": "FO1235",
       "origin": "Tucuman",
       "destination": "Buenos Aires",
-      "aitaCode": ["TUC","AEP"],
-      "date": "2024-10-29",
+      "aitaCode": ["TUC", "AEP"],
+      "date": "2024-12-01",
       "hour": ["12:30", "15:00"],
       "duration": "2h 10m",
       "price": "99.999"
+    },
+    {
+      "id": "FO2235",
+      "origin": "Mendoza",
+      "destination": "Buenos Aires",
+      "aitaCode": ["MDZ", "AEP"],
+      "date": "2024-12-01",
+      "hour": ["21:00", "22:45"],
+      "duration": "1h 45m",
+      "price": "99.999"
+    },
+    {
+      "id": "FO2236",
+      "origin": "Mendoza",
+      "destination": "Buenos Aires",
+      "aitaCode": ["MDZ", "AEP"],
+      "date": "2024-12-01",
+      "hour": ["12:30", "14:00"],
+      "duration": "1h 30m",
+      "price": "99.999"
     }
+    
   ]
 }
