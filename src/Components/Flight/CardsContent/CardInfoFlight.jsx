@@ -1,11 +1,12 @@
+// import PropTypes from "prop-types";
 import PropTypes from "prop-types";
 import { urlsImages } from "../../utilities";
 
 const CardInfoFlight = (props) => {
-  const { origin, destination, date } = props;
+  const { flighstDay, dateString } = props;
   let url;
-
-  switch (destination) {
+  console.log(flighstDay);
+  switch (flighstDay.destination) {
     case "Buenos Aires":
       url = urlsImages[0];
       break;
@@ -29,18 +30,18 @@ const CardInfoFlight = (props) => {
           <img src={url} alt="DestinationImage" />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">Vuelo #12345</h2>
-          <p>Desde: Tucumán</p>
-          <p>Hasta: Buenos Aires</p>
-          <p>Fecha de salida: 23 de octubre, 2024</p>
-          <p>Duración: 2h 30m</p>
+          <h2 className="card-title">Vuelo {flighstDay.id}</h2>
+          <p>Desde: {flighstDay.origin}</p>
+          <p>Hasta: {flighstDay.destination}</p>
+          <p>Fecha de salida: {dateString}</p>
+          <p>{flighstDay.duration}</p>
         </div>
       </div>
       <div className="card-body	bg-slate-200 rounded-b-xl">
         <h2 className="card-title">TOTAL:</h2>
         <button className="btn">
           ARS
-          <div className="badge badge-warning">$55.100</div>
+          <div className="badge badge-warning">${flighstDay.price}</div>
         </button>
       </div>
     </section>
@@ -49,7 +50,6 @@ const CardInfoFlight = (props) => {
 
 export default CardInfoFlight;
 CardInfoFlight.propTypes = {
-  origin: PropTypes.string.isRequired,
-  destination: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
+  flighstDay: PropTypes.object.isRequired,
+  dateString: PropTypes.string.isRequired,
 };
