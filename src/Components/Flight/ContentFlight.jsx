@@ -7,6 +7,7 @@ import FooterInfoFlight from "./FooterInfoFlight";
 import { useQuery } from "@tanstack/react-query";
 import { getFlightFn } from "../../api/flight";
 import Skeleton from "./CardsContent/Skeleton";
+import { useFlights } from "../../Store/useFlight";
 
 const ContentFlight = (props) => {
   const { origin, destination, date } = props;
@@ -27,6 +28,8 @@ const ContentFlight = (props) => {
     queryFn: getFlightFn,
   });
 
+  const { flightSelected, changeCard } = useFlights();
+
   if (isLoading) {
     return <Skeleton />;
   }
@@ -36,7 +39,7 @@ const ContentFlight = (props) => {
   if (flights && flights.length === 0) {
     return <div className="alert-danger">no hay entradas</div>;
   }
-  const flightsDay = flights.find((flight) => {
+  const flightsDay = flights.filter((flight) => {
     return (
       flight.origin === origin &&
       flight.destination === destination &&
@@ -51,8 +54,16 @@ const ContentFlight = (props) => {
           <h1 className="text-2xl font-bold px-3 py-2">{dateString}</h1>
         </div>
         <div className="space-y-4 mx-10">
-          <CardFlight flightsDay={flightsDay} dateString={dateString} />
-          <CardFlight flightsDay={flightsDay} dateString={dateString} />
+          {flights.map((flight) => {
+            return (
+              <CardFlight
+                key={flight.id}
+                flightsDay={flight}
+                dateString={dateString}
+                changeCard={changeCard}
+              />
+            );
+          })}
 
           <div className="flex justify-center md:justify-between ">
             <button className="btn btn-wide hidden md:block">
@@ -67,7 +78,10 @@ const ContentFlight = (props) => {
       </Grid>
       <Grid item>
         <div className="hidden md:block ">
-          <CardInfoFlight flighstDay={flightsDay} dateString={dateString} />
+          <CardInfoFlight
+            flightSelected={flightSelected}
+            dateString={dateString}
+          />
         </div>
       </Grid>
     </Grid>

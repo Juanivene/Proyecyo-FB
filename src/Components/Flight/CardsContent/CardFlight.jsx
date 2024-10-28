@@ -1,7 +1,10 @@
 import PropTypes from "prop-types";
+import { useFlights } from "../../../Store/useFlight";
 
 const CardFlight = (props) => {
   const { flightsDay } = props;
+  const { changeCard } = useFlights();
+
   return (
     <div className="card w-full bg-base-100 shadow-2xl flex flex-col md:flex-row p-4">
       <div className="flex flex-col justify-between md:w-1/3">
@@ -21,7 +24,7 @@ const CardFlight = (props) => {
         </div>
       </div>
 
-      <div className="flex items-center md:justify-start justify-center md:w-1/3 my-4 ">
+      <div className="flex items-center md:justify-center md:justify-start md:w-1/3 my-4 ">
         <div className="flex items-center space-x-2">
           <span className="text-yellow-500">{flightsDay.duration}</span>
           <span className="text-gray-400">{flightsDay.id}</span>
@@ -32,9 +35,11 @@ const CardFlight = (props) => {
           />
         </div>
       </div>
-
-      <button className="btn btn-warning text-lg mt-8 mx-2">
-        Tarifa base: ${flightsDay.price}
+      <button
+        onClick={() => changeCard(flightsDay)}
+        className="btn btn-warning text-lg mt-8 mx-2"
+      >
+        Tarifa: ${flightsDay.price}
       </button>
     </div>
   );

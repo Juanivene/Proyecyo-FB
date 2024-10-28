@@ -1,84 +1,24 @@
 {
   "flights": [
     {
-      "id": "FO12345",
-      "origin": "Buenos Aires",
-      "destination": "Tucumán",
-      "date": "2024-10-26",
-      "hour": ["08:00", "15:30"]
-    },
-    {
-      "id": "FO12346",
-      "origin": "Buenos Aires",
-      "destination": "Tucumán",
-      "date": "2024-10-26",
-      "hour": ["10:30", "18:00"]
-    },
-    {
-      "id": "FO12347",
-      "origin": "Córdoba",
-      "destination": "Bariloche",
-      "date": "2024-10-26",
-      "hour": ["09:00", "16:45"]
-    },
-    {
-      "id": "FO12348",
-      "origin": "Córdoba",
-      "destination": "Bariloche",
-      "date": "2024-10-26",
-      "hour": ["12:15", "20:00"]
-    },
-    {
-      "id": "FO12349",
-      "origin": "Mendoza",
-      "destination": "Buenos Aires",
-      "date": "2024-10-26",
-      "hour": ["07:30", "17:30"]
-    },
-    {
-      "id": "FO12341",
-      "origin": "Mendoza",
-      "destination": "Buenos Aires",
-      "date": "2024-10-26",
-      "hour": ["11:00", "19:00"]
-    },
-    {
-      "id": "FO12342",
-      "origin": "Tucumán",
-      "destination": "Córdoba",
-      "date": "2024-10-26",
-      "hour": ["08:15", "15:45"]
-    },
-    {
-      "id": "FO12343",
-      "origin": "Tucumán",
-      "destination": "Córdoba",
-      "date": "2024-10-26",
-      "hour": ["10:45", "18:15"]
-    },
-    {
-      "id": "FO12344",
-      "origin": "Bariloche",
-      "destination": "Córdoba",
-      "date": "2024-10-26",
-      "hour": ["09:30", "16:00"]
-    },
-    {
-      "id": "FO23456",
-      "origin": "Bariloche",
-      "destination": "Córdoba",
-      "date": "2024-10-26",
-      "hour": ["12:30", "20:30"]
-    },
-    {
-      "id": "FO23457",
+      "id": "FO1234",
       "origin": "Tucuman",
       "destination": "Buenos Aires",
       "aitaCode": ["TUC","AEP"],
       "date": "2024-10-29",
-      "hour": ["12:30", "20:30"],
+      "hour": ["21:00", "23:30"],
       "duration": "2h 30m",
-      "price": "119.999,99"
+      "price": "80.999"
+    },
+    {
+      "id": "FO1235",
+      "origin": "Tucuman",
+      "destination": "Buenos Aires",
+      "aitaCode": ["TUC","AEP"],
+      "date": "2024-10-29",
+      "hour": ["12:30", "15:00"],
+      "duration": "2h 10m",
+      "price": "99.999"
     }
   ]
 }
