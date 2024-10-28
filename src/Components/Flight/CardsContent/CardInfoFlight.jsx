@@ -26,7 +26,7 @@ const CardInfoFlight = (props) => {
       url = urlsImages[0];
   }
   return (
-    <section className=" w-80 shadow-xl rounded-b-xl">
+    <section className="w-full md:w-64 lg:w-80 shadow-xl rounded-b-xl">
       <div className="card rounded-none rounded-t-xl ">
         <figure>
           <img src={url} alt="DestinationImage" />

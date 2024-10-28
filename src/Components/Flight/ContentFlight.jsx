@@ -51,12 +51,12 @@ const ContentFlight = (props) => {
   });
 
   return (
-    <Grid container gap={8} className="py-10">
+    <Grid container gap={8} className="my-">
       <Grid item xs={12} lg={8}>
         <div className="mb-2">
           <h1 className="text-2xl font-bold px-3 py-2">{dateString}</h1>
         </div>
-        <div className="space-y-4 mx-10 mb-10">
+        <div className="space-y-4 mx-10 mb-2">
           {flightsDay.map((flight) => {
             return (
               <CardFlight
@@ -69,7 +69,7 @@ const ContentFlight = (props) => {
           })}
 
           <div className="flex justify-center md:justify-between ">
-            <Link to="/" className="link link-warning">
+            <Link to="/" className="link link-warning hidden md:block">
               Cambiar fecha
             </Link>
             <Link to="/pay" className="btn btn-active btn-wide ">
@@ -81,8 +81,8 @@ const ContentFlight = (props) => {
           <FooterInfoFlight />
         </div>
       </Grid>
-      <Grid item>
-        <div className="hidden md:block">
+      <Grid item xs={2} lg={1}>
+        <div className="hidden md:block my-14">
           <CardInfoFlight
             flightSelected={flightSelected}
             dateString={dateString}
