@@ -11,9 +11,10 @@ import {
   VerticalAlignTypes,
   XlColTypes,
   XsColTypes,
-} from "./grid.enums";
-
+} from "./Grid.enums.js";
 import { cn, removeLineBreaks } from "../../lib/utils.js";
+
+
 
 /**
  * A custom Grid component.
@@ -79,7 +80,9 @@ const Grid = (props) => {
       );
     }
 
+    
     if (item && xs) {
+      console.log(xs,sm,md,lg,MdColTypes[md],LgColTypes[lg])
       return cn(
         removeLineBreaks`${XsColTypes[xs]}
         ${xl ? XlColTypes[xl] : ""}
