@@ -6,7 +6,7 @@ const Header = () => {
       <div className="flex items-center justify-between py-2">
         {/* hamburguesa */}
         <div className="flex-none md:hidden ">
-          <div className="dropdown ">
+          <div className="dropdown ml-3">
             <div
               tabIndex={0}
               role="button"
@@ -20,7 +20,7 @@ const Header = () => {
             </div>
             <ul
               tabIndex={0}
-              className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+              className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow ml-3"
             >
               <li>
                 <Link to="/reservation" className="btn btn-ghost ">
