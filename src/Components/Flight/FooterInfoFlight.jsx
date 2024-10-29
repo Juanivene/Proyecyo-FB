@@ -23,7 +23,10 @@ const FooterInfoFlight = () => {
               Aeroparque Internacional Jorge Newbery
             </span>
             . Podés consultar cómo llegar{" "}
-            <a href="#" className="text-yellow-500">
+            <a
+              href="https://www.google.com.ar/maps/place/Aeroparque+Internacional+Jorge+Newbery/@-34.5574099,-58.418067,16z/data=!3m1!4b1!4m6!3m5!1s0x95bcb5a7f531c7b5:0xfdd992892f9ccadb!8m2!3d-34.5590184!4d-58.4156511!16zL20vMDFfdDM3?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D"
+              className="text-yellow-500"
+            >
               acá
             </a>
             .
@@ -33,9 +36,10 @@ const FooterInfoFlight = () => {
           <div className="text-3xl text-gray-600">🧳</div>
           <p className="text-gray-700">
             No te olvides de chequear los requisitos que solicita tu destino
-            ingresando 
+            ingresando
             <a href="/info" className="text-yellow-500">
-             {" "} acá
+              {" "}
+              acá
             </a>
             .
           </p>

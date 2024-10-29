@@ -5,10 +5,13 @@ import CardInfoFlight from "./CardsContent/CardInfoFlight";
 import Grid from "../Grid/grid";
 import FooterInfoFlight from "./FooterInfoFlight";
 import { useQuery } from "@tanstack/react-query";
-import { getFlightFn } from "../../api/flight";
 import Skeleton from "./CardsContent/Skeleton";
 import { useFlights } from "../../Store/useFlight";
 import { Link } from "react-router-dom";
+import NewError from "./NewError";
+import Swal from "sweetalert2";
+import NoFlights from "./NoFlights";
+import { getFlightFn } from "../../api/flight";
 
 const ContentFlight = (props) => {
   const { origin, destination, date } = props;
@@ -31,17 +34,27 @@ const ContentFlight = (props) => {
 
   const { flightSelected, changeCard } = useFlights();
 
- 
+  const handleContinue = () => {
+    if (flightSelected.price === "") {
+      Swal.fire({
+        title: "Atencion",
+        icon: "info",
+        html: "Debes seleccionar un vuelo para continuar <b>✈</b>",
+        timer: 2000,
+        showConfirmButton: false,
+      });
+    } else {
+      window.location.href = `http://localhost:5173/pay?price=${flightSelected.price}`;
+    }
+  };
 
   if (isLoading) {
     return <Skeleton />;
   }
   if (isError) {
-    return <div className="alert-danger">Error al leer las entradas</div>;
+    return <NewError />;
   }
-  if (flights && flights.length === 0) {
-    return <div className="alert-danger">no hay entradas</div>;
-  }
+
   const flightsDay = flights.filter((flight) => {
     return (
       flight.origin === origin &&
@@ -49,6 +62,9 @@ const ContentFlight = (props) => {
       flight.date === date
     );
   });
+  if (flightsDay && flightsDay.length === 0) {
+    return <NoFlights />;
+  }
 
   return (
     <Grid container gap={8} className="my-">
@@ -72,16 +88,19 @@ const ContentFlight = (props) => {
             <Link to="/" className="link link-warning hidden md:block">
               Cambiar fecha
             </Link>
-            <Link to="/pay" className="btn btn-active btn-wide ">
+            <button
+              onClick={handleContinue}
+              className="btn btn-active btn-wide "
+            >
               Continuar
-            </Link>
+            </button>
           </div>
         </div>
-        <div className="mx-10">
+        <div className="mx-10 mb-7">
           <FooterInfoFlight />
         </div>
       </Grid>
-      <Grid item xs={2} lg={1}>
+      <Grid item xs={1} md={1} lg={1}>
         <div className="hidden md:block my-14">
           <CardInfoFlight
             flightSelected={flightSelected}

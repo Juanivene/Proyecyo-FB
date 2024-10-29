@@ -1,9 +1,14 @@
 import PropTypes from "prop-types";
 
 const HeaderFlight = (props) => {
-  const { origin, destination, date } = props;
+  const { origin, destination, isError } = props;
+
+  if (isError) {
+    return null;
+  }
+
   return (
-    <div className="bg-base-200 shadow-md p-4 rounded-lg flex flex-col items-center">
+    <div className=" bg-base-200 shadow-md p-4 rounded-lg flex flex-col items-center">
       <img
         src="https://cdn-icons-png.flaticon.com/128/45/45896.png"
         alt="planeIcon"
@@ -25,5 +30,5 @@ export default HeaderFlight;
 HeaderFlight.propTypes = {
   origin: PropTypes.string.isRequired,
   destination: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
+  isError: PropTypes.bool.isRequired,
 };

@@ -20,8 +20,6 @@ const FormDetailFlight = () => {
 
   const onSubmit = (data) => {
     const { date, destination, origin } = data;
-    console.log(date, destination, origin);
-
     window.location.href = `http://localhost:5173/flight?origen=${origin}&destino=${destination}&fecha=${date}`;
   };
 
