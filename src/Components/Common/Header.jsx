@@ -41,7 +41,7 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="flex-1">
+        <div className="flex-1 mx-2">
           <Link to="/" className="btn btn-ghost text-xl">
             <img
               className="w-20"
@@ -65,7 +65,7 @@ const Header = () => {
         </nav>
       </div>
 
-      {/* Menú desplegable en dispositivos móviles */}
+  
     </header>
   );
 };

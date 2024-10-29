@@ -84,7 +84,7 @@ const ContentFlight = (props) => {
             );
           })}
 
-          <div className="flex justify-center md:justify-between ">
+          <div className="flex justify-center md:justify-between px-3">
             <Link to="/" className="link link-warning hidden md:block">
               Cambiar fecha
             </Link>
@@ -97,7 +97,7 @@ const ContentFlight = (props) => {
           </div>
         </div>
         <div className="mx-10 mb-7">
-          <FooterInfoFlight />
+          <FooterInfoFlight origin={origin} />
         </div>
       </Grid>
       <Grid item xs={1} md={1} lg={1}>

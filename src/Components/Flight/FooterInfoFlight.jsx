@@ -1,4 +1,26 @@
-const FooterInfoFlight = () => {
+import PropTypes from "prop-types";
+
+const FooterInfoFlight = (props) => {
+  const { origin } = props;
+  let airport;
+  switch (origin) {
+    case "Tucuman":
+      airport = "Aropuerto internacional Benjamin Matienzo";
+      break;
+    case "Buenos Aires":
+      airport = "Aeroparque Internacional Jorge Newbery";
+      break;
+    case "Mendoza":
+      airport = "Aeropuerto Internacional El Plumerillo";
+      break;
+    case "Cordoba":
+      airport =
+        "Aeropuerto Internacional Ingeniero Aeronáutico Ambrosio Taravella";
+      break;
+    case "Bariloche":
+      airport = "Aeropuerto Internacional Teniente Luis Candelaria";
+      break;
+  }
   return (
     <div className="bg-gray-100 p-6">
       <h2 className="text-lg font-bold mb-2">
@@ -18,10 +40,7 @@ const FooterInfoFlight = () => {
         <div className="flex items-start space-x-3">
           <div className="text-3xl text-gray-600">📍</div>
           <p className="text-gray-700">
-            Tu vuelo de ida sale de{" "}
-            <span className="font-bold">
-              Aeroparque Internacional Jorge Newbery
-            </span>
+            Tu vuelo de ida sale de <span className="font-bold">{airport}</span>
             . Podés consultar cómo llegar{" "}
             <a
               href="https://www.google.com.ar/maps/place/Aeroparque+Internacional+Jorge+Newbery/@-34.5574099,-58.418067,16z/data=!3m1!4b1!4m6!3m5!1s0x95bcb5a7f531c7b5:0xfdd992892f9ccadb!8m2!3d-34.5590184!4d-58.4156511!16zL20vMDFfdDM3?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D"
@@ -50,3 +69,6 @@ const FooterInfoFlight = () => {
 };
 
 export default FooterInfoFlight;
+FooterInfoFlight.propTypes = {
+  origin: PropTypes.string.isRequired,
+};
