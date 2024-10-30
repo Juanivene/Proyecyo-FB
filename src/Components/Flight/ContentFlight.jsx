@@ -44,7 +44,7 @@ const ContentFlight = (props) => {
         showConfirmButton: false,
       });
     } else {
-      window.location.href = `http://localhost:5173/pay?price=${flightSelected.price}`;
+      window.location.href = `http://localhost:5173/pay?price=${flightSelected.price}&origin=${flightSelected.origin}&flight=${flightSelected.id}`;
     }
   };
 
