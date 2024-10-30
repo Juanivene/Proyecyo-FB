@@ -18,3 +18,16 @@ export const getflightSelectedFn = async (id) => {
   }
   return data;
 };
+
+export const postCustomerFn = async (data) => {
+  const res = await fetch(`${BACKEND_URL}/customers`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+  if (!res.ok) {
+    throw new Error("Ocurrio un error al guardar la entrada");
+  }
+};

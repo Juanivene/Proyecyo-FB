@@ -23,7 +23,7 @@ const PayContent = (props) => {
       </Grid>
 
       <Grid item xs={12} sm={12} md={12} lg={8}>
-        <FormDataClient />
+        <FormDataClient id={id} />
       </Grid>
 
       {isMediumScreen ? null : (

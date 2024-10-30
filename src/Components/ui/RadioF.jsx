@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 const RadioF = (props) => {
-  const { value,label } = props;
+  const { value, label, register } = props;
   return (
     <div className="flex items-center gap-2">
       <label>{label}</label>
@@ -10,6 +10,7 @@ const RadioF = (props) => {
         name="radio-6"
         className="radio radio-warning"
         value={value}
+        
       />
     </div>
   );
