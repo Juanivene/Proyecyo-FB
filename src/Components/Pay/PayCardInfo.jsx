@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import PropTypes from "prop-types";
 import { getflightSelectedFn } from "../../api/flight";
+import PayCardError from "./PayCardError";
 
 const PayCardInfo = (props) => {
   const { id } = props;
@@ -14,14 +15,10 @@ const PayCardInfo = (props) => {
     queryFn: () => getflightSelectedFn(id),
   });
   if (isLoading) {
-    return (
-      <div className="max-w-sm bg-white border border-gray-200 shadow-lg rounded-lg overflow-hidden sticky top-20 ">
-        <div className="skeleton h-32 w-32"></div>
-      </div>
-    );
+    return <div className="skeleton h-80 w-full sticky top-20"></div>;
   }
   if (isError) {
-    return null;
+    return <PayCardError />;
   }
   const total = flightSelected.price + flightSelected.tasa;
   function formatCurrency(value) {
