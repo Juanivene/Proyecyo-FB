@@ -14,27 +14,25 @@ import {
 } from "./Grid.enums.js";
 import { cn, removeLineBreaks } from "../../lib/utils.js";
 
-
-
 /**
  * A custom Grid component.
  *
- * @param props - The component props.
- * @param alignContent - How rows are positioned in multi-row flex and grid containers.
- * @param className - Additional class names to apply to the icon container.
- * @param component - The component to render.
- * @param container - For fixing an element's width to the current breakpoint.
- * @param gap - Distance between elements.
- * @param item - To control the flexbox behavior of an element.
- * @param justifyContent - How flex and grid items are positioned along a container's main axis.
- * @param md - How elements are sized and placed across grid columns using responsive design.
- * @param lg - How elements are sized and placed across grid columns using responsive design.
- * @param rowSpan - How elements are sized and placed across grid rows.
- * @param sm - How elements are sized and placed across grid columns using responsive design.
- * @param verticalAlign - How an individual flex or grid item is positioned along its container's cross axis.
- * @param xs - How elements are sized and placed across grid columns using responsive design.
- * @param useScreen - For fixing an element's width to the current breakpoint, and not to the Grid container width.
- * @returns JSX.Element The rendered Icon component.
+ * @param props - Las propiedades del componente.
+ * @param alignContent - Cómo se posicionan las filas en contenedores de varias filas de flex y grid.
+ * @param className - Clases adicionales para aplicar al contenedor del icono.
+ * @param component - El componente a renderizar.
+ * @param container - Para fijar el ancho de un elemento al punto de interrupción actual.
+ * @param gap - Distancia entre elementos.
+ * @param item - Para controlar el comportamiento de un elemento en flexbox.
+ * @param justifyContent - Cómo se posicionan los elementos flex y grid a lo largo del eje principal del contenedor.
+ * @param md - Cómo se dimensionan y colocan los elementos a través de columnas de la cuadrícula usando diseño responsivo.
+ * @param lg - Cómo se dimensionan y colocan los elementos a través de columnas de la cuadrícula usando diseño responsivo.
+ * @param rowSpan - Cómo se dimensionan y colocan los elementos a través de filas de la cuadrícula.
+ * @param sm - Cómo se dimensionan y colocan los elementos a través de columnas de la cuadrícula usando diseño responsivo.
+ * @param verticalAlign - Cómo se posiciona un elemento flex o grid individual a lo largo del eje cruzado de su contenedor.
+ * @param xs - Cómo se dimensionan y colocan los elementos a través de columnas de la cuadrícula usando diseño responsivo.
+ * @param useScreen - Para fijar el ancho de un elemento al punto de interrupción actual, y no al ancho del contenedor Grid.
+ * @returns JSX.Element El componente de Icono renderizado.
  *
  * ```
  * @example
@@ -80,9 +78,8 @@ const Grid = (props) => {
       );
     }
 
-    
     if (item && xs) {
-      console.log(xs,sm,md,lg,MdColTypes[md],LgColTypes[lg])
+      console.log(xs, sm, md, lg, MdColTypes[md], LgColTypes[lg]);
       return cn(
         removeLineBreaks`${XsColTypes[xs]}
         ${xl ? XlColTypes[xl] : ""}
