@@ -10,6 +10,7 @@ export class Customer {
     phonenumber,
     flightSelected
   ) {
+    this.id = window.self.crypto.randomUUID();
     this.name = name;
     this.lastname = lastname;
     this.birthdate = birthdate;
