@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { getflightSelectedFn, postCustomerFn } from "../../api/flight";
 import { toast } from "sonner";
+import Alert from "../ui/Alert";
 
 const FormDataClient = (props) => {
   const { id } = props;
@@ -84,6 +85,7 @@ const FormDataClient = (props) => {
               placeHolder={`Nombre`}
               name="name"
               register={register}
+              maxL={30}
               options={{
                 required: {
                   value: true,
@@ -96,6 +98,10 @@ const FormDataClient = (props) => {
                 maxLength: {
                   value: 30,
                   message: "Debe contener 20 caracteres como maximo",
+                },
+                pattern: {
+                  value: /^[a-zA-Z\s]+$/,
+                  message: "Ingrese un nombre valido",
                 },
               }}
             />
@@ -118,6 +124,10 @@ const FormDataClient = (props) => {
                   value: 30,
                   message: "Debe contener 20 caracteres como maximo",
                 },
+                pattern: {
+                  value: /^[a-zA-Z\s]+$/,
+                  message: "Ingrese un nombre valido",
+                },
               }}
               register={register}
             />
@@ -131,7 +141,12 @@ const FormDataClient = (props) => {
               options={{
                 required: {
                   value: true,
-                  message: "Campo requerido",
+                  message: "Ingresa una fecha",
+                },
+                pattern: {
+                  value:
+                    /^(19[0-9]{2}|200[0-5]|2006)-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/,
+                  message: "Debes ser mayor de 18 años para continuar",
                 },
               }}
               register={register}
@@ -143,7 +158,10 @@ const FormDataClient = (props) => {
               className="select select-bordered w-full"
               defaultValue="Nacionalidad"
               {...register("nationality", {
-                required: "Este campo es requerido",
+                required: {
+                  value: true,
+                  message: "Selecciona una nacionalidad",
+                },
               })}
             >
               <option value="">Nacionalidad</option>
@@ -153,6 +171,11 @@ const FormDataClient = (props) => {
               <option value="uruguay">Uruguay</option>
               <option value="bolivia">Bolivia</option>
             </select>
+            {errors.nationality ? (
+              <Alert error={errors.nationality.message} />
+            ) : (
+              ""
+            )}
           </Grid>
           <Grid item xs={12}>
             <p>
@@ -177,22 +200,19 @@ const FormDataClient = (props) => {
           Debe ser el mismo documento con el que vas a viajar.Ingresa pasaporte
           o dni
         </p>
-        {/* <div className="flex gap-20">
-          <RadioF value="dni" label="DNI" {...register("dnitrue")} />
-          <RadioF   
-            value="pasaporte"
-            label="Pasaporte"
-            {...register("dnifalse")}
-          />
-        </div> */}
         <InputF
           error={errors.dni}
           placeHolder={`Numero`}
           name="dni"
+          maxL={8}
           options={{
             required: {
               value: true,
               message: "Campo requerido",
+            },
+            pattern: {
+              value: /^\d{8}$/,
+              message: "Deben ser numeros (8)",
             },
           }}
           register={register}
@@ -206,7 +226,7 @@ const FormDataClient = (props) => {
           className="select select-bordered w-full"
           defaultValue="Genero"
           {...register("genre", {
-            required: "Este campo es requerido",
+            required: " Selecciona un genero",
           })}
         >
           <option value="">Genero</option>
@@ -214,6 +234,7 @@ const FormDataClient = (props) => {
           <option value="female">Femenino</option>
           <option value="other">Otro</option>
         </select>
+        {errors.genre ? <Alert error={errors.genre.message} /> : ""}
         <p>¿Por qué queremos saber esto?</p>
         <a
           href="https://homers-webpage.vercel.app/"
@@ -237,28 +258,41 @@ const FormDataClient = (props) => {
               error={errors.telefono}
               placeHolder={`Numero de telefono`}
               name="phonenumber"
+              maxL={10}
               options={{
                 required: {
                   value: true,
                   message: "Campo requerido",
                 },
+                pattern: {
+                  value: /^\d{10}$/,
+                  message: "Debe contenero numeros (10) ",
+                },
               }}
               register={register}
             />
+            {errors.phonenumber ? (
+              <Alert error={errors.phonenumber.message} />
+            ) : (
+              ""
+            )}
           </Grid>
           <Grid item xs={6}>
             <InputF
               error={errors.email}
               placeHolder={`Email`}
               name="email"
-              type={`email`}
+              register={register}
               options={{
                 required: {
                   value: true,
                   message: "Campo requerido",
                 },
+                pattern: {
+                  value: /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/,
+                  message: "Ingrese un email valido",
+                },
               }}
-              register={register}
             />
           </Grid>
         </Grid>
