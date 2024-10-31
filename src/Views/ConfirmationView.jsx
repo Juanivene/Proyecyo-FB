@@ -13,7 +13,7 @@ const ConfirmationView = () => {
     return customer.id === idCustomerSelected;
   });
 
-  const isMediumScreen = useMediaQuery({ maxWidth: 861, maxHeight: 641 });
+  const isMediumScreen = useMediaQuery({ maxWidth: 850, maxHeight: 641 });
 
   return (
     <Grid container gap={3} className={`m-10`}>
@@ -24,7 +24,7 @@ const ConfirmationView = () => {
         </div>
       </Grid>
 
-      <Grid item xs={12} sm={12} md={12} lg={7}>
+      <Grid item xs={12} sm={12} md={12} lg={7} xl={7}>
         <ConfirmCardFlight customerSelcted={customerSelected} />
       </Grid>
 
