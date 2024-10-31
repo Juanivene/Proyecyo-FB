@@ -14,7 +14,7 @@ const PayContent = (props) => {
     <Grid container gap={3} className={`m-10`}>
       <Grid item xs={12} sm={12} md={12} lg={8}>
         <div className="text-center">
-          <h1 className="font-mono text-lg ">¿Quién viaja?</h1>
+          <h1 className="text-2xl font-semibold">¿Quién viaja?</h1>
           <p>
             Necesitamos tus datos y el de todos los pasajeros para gestionar la
             reserva
@@ -32,7 +32,7 @@ const PayContent = (props) => {
         </Grid>
       )}
 
-      <Grid item xs={12} sm={12} md={12} lg={8}>
+      <Grid item xs={12}>
         <FooterInfoFlight origin={origin} />
       </Grid>
     </Grid>

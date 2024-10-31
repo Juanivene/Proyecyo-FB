@@ -23,7 +23,7 @@ const FormDataClient = (props) => {
     mutationFn: postCustomerFn,
     onSuccess: () => {
       toast.dismiss();
-      toast.success("Entrada guardada");
+      toast.success("Datos con éxito");
 
       queryClient.invalidateQueries({
         queryKey: ["customers"],
@@ -63,7 +63,11 @@ const FormDataClient = (props) => {
       phonenumber,
       flightSelected
     );
-    postCustomer(customer);
+    // postCustomer(customer);
+    const customersInLs = JSON.parse(localStorage.getItem("customers")) || [];
+    customersInLs.push(customer);
+    localStorage.setItem("customers", JSON.stringify(customersInLs));
+    window.location.href = `http://localhost:5173/confirmation?&customer=${customer.id}`;
   };
   return (
     <form

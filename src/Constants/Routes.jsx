@@ -6,6 +6,7 @@ import ReservationView from "../Views/ReservationView";
 import InfoView from "../Views/InfoView";
 import DestinationsView from "../Views/DestinationsView";
 import PayView from "../Views/PayView";
+import ConfirmationView from "../Views/ConfirmationView";
 
 export const router = createBrowserRouter([
   {
@@ -28,10 +29,6 @@ export const router = createBrowserRouter([
         path: "/destinations",
         element: <DestinationsView />,
       },
-      // {
-      //   path: "/config/:id",
-      //   element: <HomeView />,
-      // },
       {
         path: "/flight",
         element: <FlightView />,
@@ -42,7 +39,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "confirmation",
-        element: <HomeView />,
+        element: <ConfirmationView />,
       },
     ],
   },
