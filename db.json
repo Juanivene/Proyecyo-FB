@@ -9,7 +9,11 @@
       "hour": ["21:00", "23:30"],
       "duration": "2h 30m",
       "price": 80999,
-      "tasa": 16199
+      "tasa": 16199,
+      "airport": [
+        "Aropuerto internacional Benjamin Matienzo",
+        "Aeroparque Internacional Jorge Newbery"
+      ]
     },
     {
       "id": "FO1235",
@@ -20,7 +24,11 @@
       "hour": ["12:30", "15:00"],
       "duration": "2h 10m",
       "price": 99999,
-      "tasa": 19999
+      "tasa": 19999,
+      "airport": [
+        "Aropuerto internacional Benjamin Matienzo",
+        "Aeroparque Internacional Jorge Newbery"
+      ]
     },
     {
       "id": "FO2235",
@@ -31,7 +39,11 @@
       "hour": ["21:00", "22:45"],
       "duration": "1h 45m",
       "price": 99999,
-      "tasa": 19999
+      "tasa": 19999,
+      "airport": [
+        "Aeropuerto Internacional El Plumerillo",
+        "Aeroparque Internacional Jorge Newbery"
+      ]
     },
     {
       "id": "FO2236",
@@ -42,7 +54,11 @@
       "hour": ["12:30", "14:00"],
       "duration": "1h 30m",
       "price": 75999,
-      "tasa": 15199
+      "tasa": 15199,
+      "airport": [
+        "Aeropuerto Internacional El Plumerillo",
+        "Aeroparque Internacional Jorge Newbery"
+      ]
     }
   ],
   "customers": []

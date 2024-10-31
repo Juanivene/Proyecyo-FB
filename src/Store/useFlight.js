@@ -13,7 +13,7 @@ export const useFlights = create((set) => ({
     hour: "",
     aitaCode: "",
     date: "",
-    tasa:""
+    tasa: "",
   },
   changeCard: (flightSelected) =>
     set({
@@ -26,7 +26,7 @@ export const useFlights = create((set) => ({
         hour: flightSelected.hour,
         aitaCode: flightSelected.aitaCode,
         date: flightSelected.date,
-        tasa: flightSelected.tasa
+        tasa: flightSelected.tasa,
       },
     }),
 }));
