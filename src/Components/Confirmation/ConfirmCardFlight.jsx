@@ -14,7 +14,7 @@ const ConfirmCardFlight = (props) => {
       <div>
         <p>VUELO DE IDA</p>
         <p>
-          {customerSelcted.flightSelected.origin} a{" "}
+          {customerSelcted.flightSelected.origin} a
           {customerSelcted.flightSelected.destination}
         </p>
       </div>
