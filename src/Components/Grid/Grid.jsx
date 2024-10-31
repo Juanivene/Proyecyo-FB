@@ -79,7 +79,6 @@ const Grid = (props) => {
     }
 
     if (item && xs) {
-      console.log(xs, sm, md, lg, MdColTypes[md], LgColTypes[lg]);
       return cn(
         removeLineBreaks`${XsColTypes[xs]}
         ${xl ? XlColTypes[xl] : ""}

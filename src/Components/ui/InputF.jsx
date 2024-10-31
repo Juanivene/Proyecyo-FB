@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import Alert from "./Alert";
 
 const InputF = (props) => {
   const {
@@ -7,7 +8,7 @@ const InputF = (props) => {
     error,
     className = ``,
     register,
-
+    maxL,
     options,
     placeHolder = "Ingrese un texto",
   } = props;
@@ -19,7 +20,9 @@ const InputF = (props) => {
         placeholder={placeHolder}
         type={type}
         {...register(name, options)}
+        maxLength={maxL}
       />
+      {error ? <Alert error={error.message} /> : ""}
     </fieldset>
   );
 };
@@ -34,4 +37,5 @@ InputF.propTypes = {
   register: PropTypes.func.isRequired,
   options: PropTypes.object,
   placeHolder: PropTypes.string,
+  maxL: PropTypes.number,
 };
