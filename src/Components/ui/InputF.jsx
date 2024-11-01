@@ -31,7 +31,6 @@ export default InputF;
 InputF.propTypes = {
   name: PropTypes.string.isRequired,
   type: PropTypes.string,
-
   error: PropTypes.shape({ message: PropTypes.string }),
   className: PropTypes.string,
   register: PropTypes.func.isRequired,

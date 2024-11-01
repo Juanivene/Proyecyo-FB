@@ -101,7 +101,7 @@ const FormDataClient = (props) => {
                 },
                 maxLength: {
                   value: 30,
-                  message: "Debe contener 20 caracteres como maximo",
+                  message: "Debe contener 30 caracteres como maximo",
                 },
                 pattern: {
                   value: /^[a-zA-Z\s]+$/,

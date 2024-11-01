@@ -2,8 +2,10 @@ import Grid from "../Components/Grid/grid";
 import PayCardInfo from "../Components/Pay/PayCardInfo";
 import ConfirmCardDataClient from "../Components/Confirmation/ConfirmCardDataClient";
 import ConfirmCardFlight from "../Components/Confirmation/ConfirmCardFlight";
-import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
+import FormDataPay from "../Components/Confirmation/FormDataPay";
+import Swal from "sweetalert2";
+import { useRef, useState } from "react";
 
 const ConfirmationView = () => {
   const urlParams = new URLSearchParams(window.location.search);
@@ -14,7 +16,30 @@ const ConfirmationView = () => {
     return customer.id === idCustomerSelected;
   });
 
-  const responsive = useMediaQuery({ maxWidth: 850, maxHeight: 641 });
+  const [isClose, setIsClose] = useState(false);
+  console.log(isClose);
+
+  const modal = useRef();
+  console.log(modal);
+
+  const handleExit = () => {
+    modal.current.close();
+    Swal.fire({
+      icon: "info",
+      showCancelButton: true,
+      showConfirmButton: true,
+      cancelButtonText: "No, cancelar",
+      confirmButtonText: "Si, salir",
+      text: "Seguro que quiere cancelar el pago?",
+    }).then((res) => {
+      if (res.isConfirmed) {
+        modal.current.close();
+        setIsClose(true);
+      } else {
+        modal.current.showModal();
+      }
+    });
+  };
 
   return (
     <Grid container gap={3} className={`m-10`}>
@@ -25,24 +50,47 @@ const ConfirmationView = () => {
         </div>
       </Grid>
 
-      <Grid item xs={12} sm={12} md={12} lg={7} xl={7} className={`space-y-3`}>
+      <Grid item xs={12} sm={12} md={12} lg={12} xl={7} className={`space-y-3`}>
         <ConfirmCardFlight customerSelcted={customerSelected} />
         <ConfirmCardDataClient customerSelcted={customerSelected} />
+        <div className={`flex sm:justify-between justify-center`}>
+          <Link
+            to={`/pay?&origin=${customerSelected.flightSelected.origin}&flight=${customerSelected.flightSelected.id}`}
+            className="link link-warning hidden sm:block"
+          >
+            Volver a Datos personales
+          </Link>
+          <button
+            className="btn btn-wide"
+            onClick={() => modal.current.showModal()}
+          >
+            ¡Ir al pago!
+          </button>
+
+          <dialog ref={modal} className="modal">
+            <div className="modal-box">
+              <button
+                onClick={handleExit}
+                className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+              >
+                ✕
+              </button>
+              <FormDataPay isClose={isClose} />
+            </div>
+          </dialog>
+        </div>
       </Grid>
-      {!responsive ? (
-        <Grid item xs={12} sm={12} md={12} lg={5} className={`sticky top-20`}>
-          <PayCardInfo id={customerSelected.flightSelected.id} />
-        </Grid>
-      ) : (
-        ""
-      )}
-      <Grid item xs={7} className={`flex justify-between`}>
-        <Link to="/pay" className="link link-warning hidden md:block">
-          Datos personales
-        </Link>
-        <button  className="btn btn-active btn-wide ">
-          Continuar
-        </button>
+
+      <Grid
+        item
+        xs={12}
+        sm={12}
+        md={12}
+        lg={12}
+        xl={5}
+        className={`sticky top-20 hidden lg:block`}
+      >
+        <PayCardInfo id={customerSelected.flightSelected.id} />
       </Grid>
     </Grid>
   );
