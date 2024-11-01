@@ -8,38 +8,62 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { getflightSelectedFn, postCustomerFn } from "../../api/flight";
 import { toast } from "sonner";
 import Alert from "../ui/Alert";
+import { useEffect } from "react";
 
 const FormDataClient = (props) => {
   const { id } = props;
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const idCustomerSelected = urlParams.get("customer");
+  const customersInLs = JSON.parse(localStorage.getItem("customers")) || [];
+  const customerSelected = customersInLs.find((customer) => {
+    return customer.id === idCustomerSelected;
+  });
 
   const { data: flightSelected } = useQuery({
     queryKey: [`flights-${id}`],
     queryFn: () => getflightSelectedFn(id),
   });
 
-  const queryClient = useQueryClient();
+  // const queryClient = useQueryClient();
 
-  const { mutate: postCustomer } = useMutation({
-    mutationFn: postCustomerFn,
-    onSuccess: () => {
-      toast.dismiss();
-      toast.success("Datos con éxito");
+  // const { mutate: postCustomer } = useMutation({
+  //   mutationFn: postCustomerFn,
+  //   onSuccess: () => {
+  //     toast.dismiss();
+  //     toast.success("Datos con éxito");
 
-      queryClient.invalidateQueries({
-        queryKey: ["customers"],
-      });
-    },
-    onError: (e) => {
-      toast.dismiss();
-      toast.warning(e.message);
-    },
-  });
+  //     queryClient.invalidateQueries({
+  //       queryKey: ["customers"],
+  //     });
+  //   },
+  //   onError: (e) => {
+  //     toast.dismiss();
+  //     toast.warning(e.message);
+  //   },
+  // });
 
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
+
+  useEffect(() => {
+    if (customerSelected) {
+      reset({
+        name: customerSelected.name,
+        lastname: customerSelected.lastname,
+        birthdate: customerSelected.date,
+        nationality: customerSelected.nationality,
+        dni: customerSelected.dni,
+        gender: customerSelected.gender,
+        phonenumber: customerSelected.phonenumber,
+        email: customerSelected.email,
+      });
+    }
+  }, []);
 
   const onsubmit = (data) => {
     const {
@@ -48,7 +72,7 @@ const FormDataClient = (props) => {
       birthdate,
       dni,
       email,
-      genre,
+      gender,
       nationality,
       phonenumber,
     } = data;
@@ -58,16 +82,29 @@ const FormDataClient = (props) => {
       birthdate,
       dni,
       email,
-      genre,
+      gender,
       nationality,
       phonenumber,
       flightSelected
     );
     // postCustomer(customer);
-    const customersInLs = JSON.parse(localStorage.getItem("customers")) || [];
-    customersInLs.push(customer);
-    localStorage.setItem("customers", JSON.stringify(customersInLs));
-    window.location.href = `http://localhost:5173/confirmation?&customer=${customer.id}`;
+
+    const { id: idC, ...customerNoId } = customer;
+    const { id: idCs, ...customerSelectedNoId } = customerSelected;
+    if (JSON.stringify(customerSelectedNoId) === JSON.stringify(customerNoId)) {
+      window.location.href = `http://localhost:5173/confirmation?&customer=${customerSelected.id}`;
+    } else {
+      const customersInLs = JSON.parse(localStorage.getItem("customers")) || [];
+      const customerIndex = customersInLs.findIndex((e) => {
+        return e.id === customerSelected.id;
+      });
+      console.log(customerSelected);
+      console.log(customerIndex);
+      customersInLs.splice(customerIndex, 1, customer);
+      localStorage.setItem("customers", JSON.stringify(customersInLs));
+
+      window.location.href = `http://localhost:5173/confirmation?&customer=${customer.id}`;
+    }
   };
   return (
     <form
@@ -226,10 +263,10 @@ const FormDataClient = (props) => {
       <div className="card-body">
         <h2 className="card-title text-xl font-bold text-gray-800">Genero</h2>
         <select
-          name="genre"
+          name="gender"
           className="select select-bordered w-full"
           defaultValue="Genero"
-          {...register("genre", {
+          {...register("gender", {
             required: " Selecciona un genero",
           })}
         >
@@ -238,7 +275,7 @@ const FormDataClient = (props) => {
           <option value="female">Femenino</option>
           <option value="other">Otro</option>
         </select>
-        {errors.genre ? <Alert error={errors.genre.message} /> : ""}
+        {errors.gender ? <Alert error={errors.gender.message} /> : ""}
         <p>¿Por qué queremos saber esto?</p>
         <a
           href="https://homers-webpage.vercel.app/"
@@ -259,7 +296,7 @@ const FormDataClient = (props) => {
         <Grid container gap={2}>
           <Grid item xs={6}>
             <InputF
-              error={errors.telefono}
+              error={errors.phonenumber}
               placeHolder={`Numero de telefono`}
               name="phonenumber"
               maxL={10}
@@ -275,11 +312,6 @@ const FormDataClient = (props) => {
               }}
               register={register}
             />
-            {errors.phonenumber ? (
-              <Alert error={errors.phonenumber.message} />
-            ) : (
-              ""
-            )}
           </Grid>
           <Grid item xs={6}>
             <InputF

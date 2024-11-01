@@ -17,10 +17,8 @@ const ConfirmationView = () => {
   });
 
   const [isClose, setIsClose] = useState(false);
-  console.log(isClose);
 
   const modal = useRef();
-  console.log(modal);
 
   const handleExit = () => {
     modal.current.close();

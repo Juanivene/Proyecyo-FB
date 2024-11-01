@@ -5,3 +5,8 @@ export const urlsImages = [
   "https://res.cloudinary.com/worldpackers/image/upload/c_limit,f_auto,q_auto,w_1140/dtwfnq4tdau8oilglero",
   "https://www.spain.info/.content/imagenes/cabeceras-grandes/andalucia/vistas-cordoba-s158982617.jpg",
 ];
+export const elementInLs = (array, arra) => {
+  array.findIndex((e) => {
+    return e.i === arra.i;
+  });
+};

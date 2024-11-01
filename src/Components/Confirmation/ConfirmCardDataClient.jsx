@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const ConfirmCardDataClient = (props) => {
   const { customerSelcted } = props;
+
   return (
     <Grid
       container
@@ -34,7 +35,12 @@ const ConfirmCardDataClient = (props) => {
         </p>
       </Grid>
       <Grid item xs={12}>
-        <Link className="link link-warning">Modifica tus datos</Link>
+        <Link
+          to={`/pay?&origin=${customerSelcted.flightSelected.origin}&flight=${customerSelcted.flightSelected.id}&customer=${customerSelcted.id}`}
+          className="link link-warning"
+        >
+          Modifica tus datos
+        </Link>
       </Grid>
     </Grid>
   );
