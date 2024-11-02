@@ -97,13 +97,6 @@ const FormDataClient = (props) => {
     );
     // postCustomer(customer);
 
-    const customerNoId = { ...customer };
-    delete customerNoId.id;
-    const customerSelectedNoId = { ...customerSelected };
-    delete customerSelectedNoId.id;
-    if (JSON.stringify(customerSelectedNoId) === JSON.stringify(customerNoId)) {
-      window.location.href = `http://localhost:5173/confirmation?&customer=${customerSelected.id}`;
-    }
     const updatedCustomers = [...customersInLs];
     if (customerSelected) {
       const customerIndex = updatedCustomers.findIndex(
