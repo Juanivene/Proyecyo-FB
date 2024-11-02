@@ -8,14 +8,22 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { getflightSelectedFn, postCustomerFn } from "../../api/flight";
 import { toast } from "sonner";
 import Alert from "../ui/Alert";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const FormDataClient = (props) => {
   const { id } = props;
 
   const urlParams = new URLSearchParams(window.location.search);
   const idCustomerSelected = urlParams.get("customer");
-  const customersInLs = JSON.parse(localStorage.getItem("customers")) || [];
+
+  const [customersInLs, setCustomerInLs] = useState(
+    JSON.parse(localStorage.getItem("customers")) || []
+  );
+
+  useEffect(() => {
+    localStorage.setItem("customers", JSON.stringify(customersInLs));
+  }, [customersInLs]);
+
   const customerSelected = customersInLs.find((customer) => {
     return customer.id === idCustomerSelected;
   });
@@ -89,22 +97,25 @@ const FormDataClient = (props) => {
     );
     // postCustomer(customer);
 
-    const { id: idC, ...customerNoId } = customer;
-    const { id: idCs, ...customerSelectedNoId } = customerSelected;
+    const customerNoId = { ...customer };
+    delete customerNoId.id;
+    const customerSelectedNoId = { ...customerSelected };
+    delete customerSelectedNoId.id;
     if (JSON.stringify(customerSelectedNoId) === JSON.stringify(customerNoId)) {
       window.location.href = `http://localhost:5173/confirmation?&customer=${customerSelected.id}`;
-    } else {
-      const customersInLs = JSON.parse(localStorage.getItem("customers")) || [];
-      const customerIndex = customersInLs.findIndex((e) => {
-        return e.id === customerSelected.id;
-      });
-      console.log(customerSelected);
-      console.log(customerIndex);
-      customersInLs.splice(customerIndex, 1, customer);
-      localStorage.setItem("customers", JSON.stringify(customersInLs));
-
-      window.location.href = `http://localhost:5173/confirmation?&customer=${customer.id}`;
     }
+    const updatedCustomers = [...customersInLs];
+    if (customerSelected) {
+      const customerIndex = updatedCustomers.findIndex(
+        (e) => e.id === customerSelected.id
+      );
+      updatedCustomers.splice(customerIndex, 1, customer);
+    } else {
+      updatedCustomers.push(customer);
+    }
+
+    setCustomerInLs(updatedCustomers);
+    window.location.href = `http://localhost:5173/confirmation?&customer=${customer.id}`;
   };
   return (
     <form

@@ -3,7 +3,7 @@ import Grid from "../Grid/grid";
 import { Link } from "react-router-dom";
 
 const ConfirmCardDataClient = (props) => {
-  const { customerSelcted } = props;
+  const { customerSelected } = props;
 
   return (
     <Grid
@@ -13,30 +13,32 @@ const ConfirmCardDataClient = (props) => {
     >
       <Grid item xs={12} className="flex items-center space-x-2">
         <p className="font-semibold text-gray-700">
-          {customerSelcted.name} {customerSelcted.lastname}
+          {customerSelected.name} {customerSelected.lastname}
         </p>
       </Grid>
       <Grid item xs={12} className={`mt-2`}>
         <p>
           Documento:{" "}
-          <span className="font-bold text-gray-700">{customerSelcted.dni}</span>
+          <span className="font-bold text-gray-700">
+            {customerSelected.dni}
+          </span>
         </p>
         <p>
           Telefono:{" "}
           <span className="font-bold text-gray-700">
-            {customerSelcted.phonenumber}
+            {customerSelected.phonenumber}
           </span>
         </p>
         <p>
           Email:{" "}
           <span className="font-bold text-gray-700">
-            {customerSelcted.email}
+            {customerSelected.email}
           </span>
         </p>
       </Grid>
       <Grid item xs={12}>
         <Link
-          to={`/pay?&origin=${customerSelcted.flightSelected.origin}&flight=${customerSelcted.flightSelected.id}&customer=${customerSelcted.id}`}
+          to={`/pay?&origin=${customerSelected.flightSelected.origin}&flight=${customerSelected.flightSelected.id}&customer=${customerSelected.id}`}
           className="link link-warning"
         >
           Modifica tus datos
@@ -48,5 +50,5 @@ const ConfirmCardDataClient = (props) => {
 
 export default ConfirmCardDataClient;
 ConfirmCardDataClient.propTypes = {
-  customerSelcted: PropTypes.object.isRequired,
+  customerSelected: PropTypes.object,
 };

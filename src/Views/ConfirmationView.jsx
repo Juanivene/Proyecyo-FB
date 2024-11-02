@@ -49,11 +49,11 @@ const ConfirmationView = () => {
       </Grid>
 
       <Grid item xs={12} sm={12} md={12} lg={12} xl={7} className={`space-y-3`}>
-        <ConfirmCardFlight customerSelcted={customerSelected} />
-        <ConfirmCardDataClient customerSelcted={customerSelected} />
+        <ConfirmCardFlight customerSelected={customerSelected} />
+        <ConfirmCardDataClient customerSelected={customerSelected} />
         <div className={`flex sm:justify-between justify-center`}>
           <Link
-            to={`/pay?&origin=${customerSelected.flightSelected.origin}&flight=${customerSelected.flightSelected.id}`}
+            to={`/pay?&origin=${customerSelected.flightSelected.origin}&flight=${customerSelected.flightSelected.id}&customer=${customerSelected.id}`}
             className="link link-warning hidden sm:block"
           >
             Volver a Datos personales

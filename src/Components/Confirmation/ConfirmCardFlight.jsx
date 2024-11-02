@@ -2,8 +2,8 @@ import PropTypes from "prop-types";
 import Grid from "../Grid/grid";
 
 const ConfirmCardFlight = (props) => {
-  const { customerSelcted } = props;
-  const { flightSelected } = customerSelcted;
+  const { customerSelected } = props;
+  const { flightSelected } = customerSelected;
 
   function getDay(fechaStr) {
     const fecha = new Date(fechaStr + "T00:00:00");
@@ -41,7 +41,7 @@ const ConfirmCardFlight = (props) => {
           </p>
         </div>
       </Grid>
-      <Grid item xs={12} md={9}  className={`mx-10 `}>
+      <Grid item xs={12} md={9} className={`mx-10 `}>
         <div className="flex justify-between">
           <div>
             <p className="font-semibold">{flightSelected.date}</p>
@@ -89,5 +89,5 @@ const ConfirmCardFlight = (props) => {
 
 export default ConfirmCardFlight;
 ConfirmCardFlight.propTypes = {
-  customerSelcted: PropTypes.object.isRequired,
+  customerSelected: PropTypes.object.isRequired,
 };
