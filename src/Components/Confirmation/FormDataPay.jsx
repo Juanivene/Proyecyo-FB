@@ -2,9 +2,13 @@ import { useForm } from "react-hook-form";
 import InputF from "../ui/InputF";
 import PropTypes from "prop-types";
 import { useEffect } from "react";
+import Swal from "sweetalert2";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { postCustomerFn } from "../../api/flight";
+import { toast } from "sonner";
 
 const FormDataPay = (props) => {
-  let { isClose } = props;
+  const { isClose, isSubmit, setIsSubmit, customerSelected } = props;
 
   const {
     register,
@@ -24,12 +28,58 @@ const FormDataPay = (props) => {
     }
   }, [isClose, reset]);
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const queryClient = useQueryClient();
+
+  const { mutate: postCustomer } = useMutation({
+    mutationFn: postCustomerFn,
+    onSuccess: () => {
+      toast.dismiss();
+      toast.success("Datos con éxito");
+
+      queryClient.invalidateQueries({
+        queryKey: ["customers"],
+      });
+    },
+    onError: (e) => {
+      toast.dismiss();
+      toast.warning(e.message);
+    },
+  });
+
+  const onSubmit = () => {
+    setIsSubmit(true);
+    Swal.fire({
+      title: "Confirmar Pago de Reserva",
+      text: "¿Estás seguro de que deseas confirmar el pago de tu reserva de vuelo? Por favor, revisa los detalles antes de continuar.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, confirmar",
+      cancelButtonText: "Revisar detalles",
+    }).then((result) => {
+      postCustomer(customerSelected);
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "¡Felicidades!",
+          text: "Tu reserva se ha generado con exito",
+          icon: "success",
+          showConfirmButton: false,
+          timer: 3000,
+        });
+        setInterval(() => {
+          window.location.href = `http://localhost:5173/reservation?&customer=${customerSelected.id}`;
+        }, 3000);
+      }
+      setIsSubmit(false);
+    });
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="max-w-xl mx-auto m-5">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className={isSubmit ? `hidden` : `max-w-xl mx-auto m-5`}
+    >
       <h2 className="text-xl font-bold mb-4">
         Ingrese los datos de la tarjeta
       </h2>
@@ -144,4 +194,7 @@ const FormDataPay = (props) => {
 export default FormDataPay;
 FormDataPay.propTypes = {
   isClose: PropTypes.bool.isRequired,
+  isSubmit: PropTypes.bool.isRequired,
+  setIsSubmit: PropTypes.func.isRequired,
+  customerSelected: PropTypes.object.isRequired,
 };

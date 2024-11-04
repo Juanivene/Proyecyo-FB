@@ -5,7 +5,7 @@ import ConfirmCardFlight from "../Components/Confirmation/ConfirmCardFlight";
 import { Link } from "react-router-dom";
 import FormDataPay from "../Components/Confirmation/FormDataPay";
 import Swal from "sweetalert2";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const ConfirmationView = () => {
   const urlParams = new URLSearchParams(window.location.search);
@@ -17,6 +17,10 @@ const ConfirmationView = () => {
   });
 
   const [isClose, setIsClose] = useState(false);
+  const [isSubmit, setIsSubmit] = useState(false);
+  useEffect(() => {
+    console.log(isSubmit);
+  }, [isSubmit]);
 
   const modal = useRef();
 
@@ -64,18 +68,26 @@ const ConfirmationView = () => {
           >
             ¡Ir al pago!
           </button>
-
-          <dialog ref={modal} className="modal">
-            <div className="modal-box">
-              <button
-                onClick={handleExit}
-                className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
-              >
-                ✕
-              </button>
-              <FormDataPay isClose={isClose} />
-            </div>
-          </dialog>
+          {!isSubmit ? (
+            <dialog ref={modal} className={`modal`}>
+              <div className="modal-box">
+                <button
+                  onClick={handleExit}
+                  className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+                >
+                  ✕
+                </button>
+                <FormDataPay
+                  customerSelected={customerSelected}
+                  isClose={isClose}
+                  isSubmit={isSubmit}
+                  setIsSubmit={setIsSubmit}
+                />
+              </div>
+            </dialog>
+          ) : (
+            ""
+          )}
         </div>
       </Grid>
 

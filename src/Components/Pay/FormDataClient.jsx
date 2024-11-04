@@ -33,24 +33,6 @@ const FormDataClient = (props) => {
     queryFn: () => getflightSelectedFn(id),
   });
 
-  // const queryClient = useQueryClient();
-
-  // const { mutate: postCustomer } = useMutation({
-  //   mutationFn: postCustomerFn,
-  //   onSuccess: () => {
-  //     toast.dismiss();
-  //     toast.success("Datos con éxito");
-
-  //     queryClient.invalidateQueries({
-  //       queryKey: ["customers"],
-  //     });
-  //   },
-  //   onError: (e) => {
-  //     toast.dismiss();
-  //     toast.warning(e.message);
-  //   },
-  // });
-
   const {
     register,
     handleSubmit,
@@ -95,7 +77,6 @@ const FormDataClient = (props) => {
       phonenumber,
       flightSelected
     );
-    // postCustomer(customer);
 
     const updatedCustomers = [...customersInLs];
     if (customerSelected) {
