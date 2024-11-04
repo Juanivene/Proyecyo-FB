@@ -62,32 +62,6 @@
     }
   ],
   "customers": [
-    {
-      "id": "de836299-63aa-49cd-8b24-57ee9e72d107",
-      "name": "ezeuiel",
-      "lastname": "amin",
-      "birthdate": "2002-12-21",
-      "dni": "12345678",
-      "email": "ezeaminnnn@gmail.com",
-      "gender": "male",
-      "nationality": "argentina",
-      "phonenumber": "1234554321",
-      "flightSelected": {
-        "id": "FO1235",
-        "origin": "Tucuman",
-        "destination": "Buenos Aires",
-        "aitaCode": ["TUC", "AEP"],
-        "date": "2024-12-01",
-        "hour": ["12:30", "15:00"],
-        "duration": "2h 10m",
-        "price": 99999,
-        "tasa": 19999,
-        "airport": [
-          "Aropuerto internacional Benjamin Matienzo",
-          "Aeroparque Internacional Jorge Newbery"
-        ]
-      },
-      "idBooking": "327249"
-    }
+    
   ]
 }

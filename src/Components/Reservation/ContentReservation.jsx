@@ -7,7 +7,6 @@ import ConfirmCardDataClient from "../Confirmation/ConfirmCardDataClient";
 import Grid from "../Grid/grid";
 import ConfirmCardFlight from "../Confirmation/ConfirmCardFlight";
 import FooterInfoFlight from "../Flight/FooterInfoFlight";
-import CardInfoFlight from "../Flight/CardsContent/CardInfoFlight";
 import PayCardInfo from "../Pay/PayCardInfo";
 
 const ContentReservation = (props) => {

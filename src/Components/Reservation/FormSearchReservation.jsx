@@ -18,11 +18,9 @@ const FormSearchReservation = () => {
 
   const onSubmit = (data) => {
     const { idBooking, lastName } = data;
-    console.log(idBooking, lastName);
+
     const booking = bookings.find((e) => {
-      console.log(e.idBooking, e.lastname);
-      console.log(idBooking, lastName);
-      return e.idBooking && e.lastName === idBooking && lastName;
+      return e.idBooking === idBooking && e.lastname === lastName;
     });
 
     if (!booking) {
@@ -40,7 +38,7 @@ const FormSearchReservation = () => {
   };
 
   return (
-    <div className="flex justify-center items-center py-32 bg-gray-100">
+    <div className="flex justify-center items-center py-28 px-3 bg-gray-100">
       <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
         <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
           Buscar Reserva
@@ -98,6 +96,11 @@ const FormSearchReservation = () => {
                 pattern: {
                   value: /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s'-]+$/,
                   message: "Ingresa un apellido valido",
+                },
+                validate: {
+                  isLowerCase: (value) =>
+                    value === value.toLowerCase() ||
+                    "El apellido debe estar en minúsculas",
                 },
               }}
             />

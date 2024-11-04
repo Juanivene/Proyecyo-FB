@@ -66,9 +66,9 @@ const FormDataPay = (props) => {
       confirmButtonText: "Si, confirmar",
       cancelButtonText: "Revisar detalles",
     }).then((result) => {
-      const booking = { ...customerSelected, idBooking: `${idBooking}` };
-      postCustomer(booking);
       if (result.isConfirmed) {
+        const booking = { ...customerSelected, idBooking: `${idBooking}` };
+        postCustomer(booking);
         Swal.fire({
           title: "¡Felicidades!",
           html: `Tu reserva se ha generado con exito<br/>Tu codigo de reserva es: <strong>${booking.idBooking}</strong> `,

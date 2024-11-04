@@ -4,9 +4,9 @@ import Grid from "../Grid/grid";
 import { Link } from "react-router-dom";
 import { Customer } from "./Customer";
 import PropTypes from "prop-types";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { getflightSelectedFn, postCustomerFn } from "../../api/flight";
-import { toast } from "sonner";
+import { useQuery } from "@tanstack/react-query";
+import { getflightSelectedFn } from "../../api/flight";
+
 import Alert from "../ui/Alert";
 import { useEffect, useState } from "react";
 
@@ -66,17 +66,19 @@ const FormDataClient = (props) => {
       nationality,
       phonenumber,
     } = data;
+
     const customer = new Customer(
-      name,
-      lastname,
+      name.toLowerCase(),
+      lastname.toLowerCase(),
       birthdate,
       dni,
-      email,
+      email.toLowerCase(),
       gender,
       nationality,
       phonenumber,
       flightSelected
     );
+    console.log(customer);
 
     const updatedCustomers = [...customersInLs];
     if (customerSelected) {
