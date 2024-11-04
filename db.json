@@ -87,17 +87,17 @@
   ],
   "customers": [
     {
-      "id": "451a075c-3e13-4efe-940e-e495d750092d",
-      "name": "lucia",
-      "lastname": "veneziano",
-      "birthdate": "2003-11-29",
-      "dni": "11111111",
-      "email": "fabruvene@gmail.com",
+      "id": "bc3b0a72-c3b7-45eb-b0a9-d83dc91597be",
+      "name": "Juani",
+      "lastname": "Veneziano",
+      "birthdate": "2003-11-27",
+      "dni": "45127062",
+      "email": "venezianojuani@gmail.com",
       "gender": "female",
       "nationality": "argentina",
       "phonenumber": "3453588888",
       "flightSelected": {
-        "id": "FO1235",
+        "id": "FO1234",
         "origin": "Tucuman",
         "destination": "Buenos Aires",
         "aitaCode": [
@@ -106,273 +106,18 @@
         ],
         "date": "2024-12-01",
         "hour": [
-          "12:30",
-          "15:00"
+          "21:00",
+          "23:30"
         ],
-        "duration": "2h 10m",
-        "price": 99999,
-        "tasa": 19999,
+        "duration": "2h 30m",
+        "price": 80999,
+        "tasa": 16199,
         "airport": [
           "Aropuerto internacional Benjamin Matienzo",
           "Aeroparque Internacional Jorge Newbery"
         ]
-      }
-    },
-    {
-      "id": "451a075c-3e13-4efe-940e-e495d750092d",
-      "name": "lucia",
-      "lastname": "veneziano",
-      "birthdate": "2003-11-29",
-      "dni": "11111111",
-      "email": "fabruvene@gmail.com",
-      "gender": "female",
-      "nationality": "argentina",
-      "phonenumber": "3453588888",
-      "flightSelected": {
-        "id": "FO1235",
-        "origin": "Tucuman",
-        "destination": "Buenos Aires",
-        "aitaCode": [
-          "TUC",
-          "AEP"
-        ],
-        "date": "2024-12-01",
-        "hour": [
-          "12:30",
-          "15:00"
-        ],
-        "duration": "2h 10m",
-        "price": 99999,
-        "tasa": 19999,
-        "airport": [
-          "Aropuerto internacional Benjamin Matienzo",
-          "Aeroparque Internacional Jorge Newbery"
-        ]
-      }
-    },
-    {
-      "id": "451a075c-3e13-4efe-940e-e495d750092d",
-      "name": "lucia",
-      "lastname": "veneziano",
-      "birthdate": "2003-11-29",
-      "dni": "11111111",
-      "email": "fabruvene@gmail.com",
-      "gender": "female",
-      "nationality": "argentina",
-      "phonenumber": "3453588888",
-      "flightSelected": {
-        "id": "FO1235",
-        "origin": "Tucuman",
-        "destination": "Buenos Aires",
-        "aitaCode": [
-          "TUC",
-          "AEP"
-        ],
-        "date": "2024-12-01",
-        "hour": [
-          "12:30",
-          "15:00"
-        ],
-        "duration": "2h 10m",
-        "price": 99999,
-        "tasa": 19999,
-        "airport": [
-          "Aropuerto internacional Benjamin Matienzo",
-          "Aeroparque Internacional Jorge Newbery"
-        ]
-      }
-    },
-    {
-      "id": "451a075c-3e13-4efe-940e-e495d750092d",
-      "name": "lucia",
-      "lastname": "veneziano",
-      "birthdate": "2003-11-29",
-      "dni": "11111111",
-      "email": "fabruvene@gmail.com",
-      "gender": "female",
-      "nationality": "argentina",
-      "phonenumber": "3453588888",
-      "flightSelected": {
-        "id": "FO1235",
-        "origin": "Tucuman",
-        "destination": "Buenos Aires",
-        "aitaCode": [
-          "TUC",
-          "AEP"
-        ],
-        "date": "2024-12-01",
-        "hour": [
-          "12:30",
-          "15:00"
-        ],
-        "duration": "2h 10m",
-        "price": 99999,
-        "tasa": 19999,
-        "airport": [
-          "Aropuerto internacional Benjamin Matienzo",
-          "Aeroparque Internacional Jorge Newbery"
-        ]
-      }
-    },
-    {
-      "id": "451a075c-3e13-4efe-940e-e495d750092d",
-      "name": "lucia",
-      "lastname": "veneziano",
-      "birthdate": "2003-11-29",
-      "dni": "11111111",
-      "email": "fabruvene@gmail.com",
-      "gender": "female",
-      "nationality": "argentina",
-      "phonenumber": "3453588888",
-      "flightSelected": {
-        "id": "FO1235",
-        "origin": "Tucuman",
-        "destination": "Buenos Aires",
-        "aitaCode": [
-          "TUC",
-          "AEP"
-        ],
-        "date": "2024-12-01",
-        "hour": [
-          "12:30",
-          "15:00"
-        ],
-        "duration": "2h 10m",
-        "price": 99999,
-        "tasa": 19999,
-        "airport": [
-          "Aropuerto internacional Benjamin Matienzo",
-          "Aeroparque Internacional Jorge Newbery"
-        ]
-      }
-    },
-    {
-      "id": "451a075c-3e13-4efe-940e-e495d750092d",
-      "name": "lucia",
-      "lastname": "veneziano",
-      "birthdate": "2003-11-29",
-      "dni": "11111111",
-      "email": "fabruvene@gmail.com",
-      "gender": "female",
-      "nationality": "argentina",
-      "phonenumber": "3453588888",
-      "flightSelected": {
-        "id": "FO1235",
-        "origin": "Tucuman",
-        "destination": "Buenos Aires",
-        "aitaCode": [
-          "TUC",
-          "AEP"
-        ],
-        "date": "2024-12-01",
-        "hour": [
-          "12:30",
-          "15:00"
-        ],
-        "duration": "2h 10m",
-        "price": 99999,
-        "tasa": 19999,
-        "airport": [
-          "Aropuerto internacional Benjamin Matienzo",
-          "Aeroparque Internacional Jorge Newbery"
-        ]
-      }
-    },
-    {
-      "id": "451a075c-3e13-4efe-940e-e495d750092d",
-      "name": "lucia",
-      "lastname": "veneziano",
-      "birthdate": "2003-11-29",
-      "dni": "11111111",
-      "email": "fabruvene@gmail.com",
-      "gender": "female",
-      "nationality": "argentina",
-      "phonenumber": "3453588888",
-      "flightSelected": {
-        "id": "FO1235",
-        "origin": "Tucuman",
-        "destination": "Buenos Aires",
-        "aitaCode": [
-          "TUC",
-          "AEP"
-        ],
-        "date": "2024-12-01",
-        "hour": [
-          "12:30",
-          "15:00"
-        ],
-        "duration": "2h 10m",
-        "price": 99999,
-        "tasa": 19999,
-        "airport": [
-          "Aropuerto internacional Benjamin Matienzo",
-          "Aeroparque Internacional Jorge Newbery"
-        ]
-      }
-    },
-    {
-      "id": "451a075c-3e13-4efe-940e-e495d750092d",
-      "name": "lucia",
-      "lastname": "veneziano",
-      "birthdate": "2003-11-29",
-      "dni": "11111111",
-      "email": "fabruvene@gmail.com",
-      "gender": "female",
-      "nationality": "argentina",
-      "phonenumber": "3453588888",
-      "flightSelected": {
-        "id": "FO1235",
-        "origin": "Tucuman",
-        "destination": "Buenos Aires",
-        "aitaCode": [
-          "TUC",
-          "AEP"
-        ],
-        "date": "2024-12-01",
-        "hour": [
-          "12:30",
-          "15:00"
-        ],
-        "duration": "2h 10m",
-        "price": 99999,
-        "tasa": 19999,
-        "airport": [
-          "Aropuerto internacional Benjamin Matienzo",
-          "Aeroparque Internacional Jorge Newbery"
-        ]
-      }
-    },
-    {
-      "id": "451a075c-3e13-4efe-940e-e495d750092d",
-      "name": "lucia",
-      "lastname": "veneziano",
-      "birthdate": "2003-11-29",
-      "dni": "11111111",
-      "email": "fabruvene@gmail.com",
-      "gender": "female",
-      "nationality": "argentina",
-      "phonenumber": "3453588888",
-      "flightSelected": {
-        "id": "FO1235",
-        "origin": "Tucuman",
-        "destination": "Buenos Aires",
-        "aitaCode": [
-          "TUC",
-          "AEP"
-        ],
-        "date": "2024-12-01",
-        "hour": [
-          "12:30",
-          "15:00"
-        ],
-        "duration": "2h 10m",
-        "price": 99999,
-        "tasa": 19999,
-        "airport": [
-          "Aropuerto internacional Benjamin Matienzo",
-          "Aeroparque Internacional Jorge Newbery"
-        ]
-      }
+      },
+      "idBooking": "662906"
     }
   ]
 }

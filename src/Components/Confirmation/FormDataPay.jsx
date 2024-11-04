@@ -46,6 +46,14 @@ const FormDataPay = (props) => {
     },
   });
 
+  const generateIdBooking = () => {
+    // Define un rango para el número de reserva
+    const min = 100000; // Mínimo 6 dígitos
+    const max = 999999; // Máximo 6 dígitos
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
+  const idBooking = generateIdBooking();
+
   const onSubmit = () => {
     setIsSubmit(true);
     Swal.fire({
@@ -58,18 +66,20 @@ const FormDataPay = (props) => {
       confirmButtonText: "Si, confirmar",
       cancelButtonText: "Revisar detalles",
     }).then((result) => {
-      postCustomer(customerSelected);
+      const booking = { ...customerSelected, idBooking: `${idBooking}` };
+      postCustomer(booking);
       if (result.isConfirmed) {
         Swal.fire({
           title: "¡Felicidades!",
-          text: "Tu reserva se ha generado con exito",
+          html: `Tu reserva se ha generado con exito<br/>Tu codigo de reserva es: <strong>${booking.idBooking}</strong> `,
           icon: "success",
-          showConfirmButton: false,
-          timer: 3000,
+          confirmButtonText: "Ir a mi reserva",
+          confirmButtonColor: "#FFD700",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = `http://localhost:5173/reservation?&customer=${customerSelected.id}`;
+          }
         });
-        setInterval(() => {
-          window.location.href = `http://localhost:5173/reservation?&customer=${customerSelected.id}`;
-        }, 3000);
       }
       setIsSubmit(false);
     });
@@ -94,7 +104,6 @@ const FormDataPay = (props) => {
           name="name"
           register={register}
           maxL={30}
-          value="juanito"
           options={{
             required: {
               value: true,
