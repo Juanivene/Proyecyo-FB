@@ -28,14 +28,14 @@ const ContentReservation = (props) => {
   }
   return (
     <Grid container gap={4} className="m-3">
-      <Grid item xs={7} className="space-y-4">
+      <Grid item xs={12} lg={7} className="space-y-4">
         <ConfirmCardFlight customerSelected={booking} />
         <ConfirmCardDataClient customerSelected={booking} isBooking={true} />
       </Grid>
-      <Grid item xs={5}>
+      <Grid item xs={12} lg={5}>
         <PayCardInfo id={booking.flightSelected.id} />
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={12} lg={12}>
         <FooterInfoFlight origin={booking.flightSelected.origin} />
       </Grid>
     </Grid>
