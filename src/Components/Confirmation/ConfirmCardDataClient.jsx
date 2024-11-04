@@ -3,7 +3,7 @@ import Grid from "../Grid/grid";
 import { Link } from "react-router-dom";
 
 const ConfirmCardDataClient = (props) => {
-  const { customerSelected } = props;
+  const { customerSelected, isBooking } = props;
 
   return (
     <Grid
@@ -36,14 +36,19 @@ const ConfirmCardDataClient = (props) => {
           </span>
         </p>
       </Grid>
-      <Grid item xs={12}>
-        <Link
-          to={`/pay?&origin=${customerSelected.flightSelected.origin}&flight=${customerSelected.flightSelected.id}&customer=${customerSelected.id}`}
-          className="link link-warning"
-        >
-          Modifica tus datos
-        </Link>
-      </Grid>
+
+      {!isBooking ? (
+        <Grid item xs={12}>
+          <Link
+            to={`/pay?&origin=${customerSelected.flightSelected.origin}&flight=${customerSelected.flightSelected.id}&customer=${customerSelected.id}`}
+            className="link link-warning"
+          >
+            Modifica tus datos
+          </Link>
+        </Grid>
+      ) : (
+        ""
+      )}
     </Grid>
   );
 };
@@ -51,4 +56,5 @@ const ConfirmCardDataClient = (props) => {
 export default ConfirmCardDataClient;
 ConfirmCardDataClient.propTypes = {
   customerSelected: PropTypes.object,
+  isBooking: PropTypes.bool,
 };

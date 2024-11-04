@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import InputF from "../ui/InputF";
 import { useQuery } from "@tanstack/react-query";
 import { getcustomersFn } from "../../api/customer";
+import Swal from "sweetalert2";
 
 const FormSearchReservation = () => {
   const {
@@ -10,12 +11,34 @@ const FormSearchReservation = () => {
     formState: { errors },
   } = useForm();
 
-  
-
+  const { data: bookings } = useQuery({
+    queryKey: ["customers"],
+    queryFn: getcustomersFn,
+  });
 
   const onSubmit = (data) => {
-    console.log(data);
+    const { idBooking, lastName } = data;
+    console.log(idBooking, lastName);
+    const booking = bookings.find((e) => {
+      console.log(e.idBooking, e.lastname);
+      console.log(idBooking, lastName);
+      return e.idBooking && e.lastName === idBooking && lastName;
+    });
+
+    if (!booking) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        html: "No encontramos coincidencias con tus credenciales<br/> intentalo de nuevo",
+        confirmButtonColor: "#FFD700",
+        confirmButtonText: "Intentar nuevamente",
+        footer: '<strong><a href="/info">Necesito ayuda</a></strong>',
+      });
+    }
+
+    window.location.href = `http://localhost:5173/reservation?&customer=${booking.id}`;
   };
+
   return (
     <div className="flex justify-center items-center py-32 bg-gray-100">
       <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
@@ -32,8 +55,8 @@ const FormSearchReservation = () => {
             </label>
             <InputF
               register={register}
-              name="idReservation"
-              error={errors.idReservation}
+              name="idBooking"
+              error={errors.idBooking}
               maxL={6}
               placeHolder="123456"
               options={{
