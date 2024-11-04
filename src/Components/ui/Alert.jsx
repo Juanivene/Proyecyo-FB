@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const Alert = (props) => {
   const { error } = props;
-  console.log(error);
+
   return (
     <div className="flex mt-2">
       <svg
