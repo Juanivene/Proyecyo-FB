@@ -30,7 +30,8 @@ const FormSearchReservation = () => {
         html: "No encontramos coincidencias con tus credenciales<br/> intentalo de nuevo",
         confirmButtonColor: "#FFD700",
         confirmButtonText: "Intentar nuevamente",
-        footer: '<strong><a href="/info">Necesito ayuda</a></strong>',
+        footer:
+          '<strong><a href="https://api.whatsapp.com/send/?phone=543813538206&text=Hola+me+gustar%C3%ADa+obtener+m%C3%A1s+informaci%C3%B3n&type=phone_number&app_absent=0">Necesito ayuda</a></strong>',
       });
     }
 
@@ -38,7 +39,7 @@ const FormSearchReservation = () => {
   };
 
   return (
-    <div className="flex justify-center items-center py-28 px-3 bg-gray-100">
+    <div className="flex justify-center items-center py-44 md:py-28 px-5 bg-gray-100">
       <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
         <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
           Buscar Reserva
