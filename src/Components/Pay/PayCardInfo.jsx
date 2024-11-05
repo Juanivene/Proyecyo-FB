@@ -20,14 +20,14 @@ const PayCardInfo = (props) => {
   if (isError) {
     return <PayCardError />;
   }
-  const total = flightSelected.price + flightSelected.tasa;
-  function formatCurrency(value) {
-    if (isNaN(value)) return value;
-    return `$${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`;
-  }
-  const price = formatCurrency(flightSelected.price);
-  const tasa = formatCurrency(flightSelected.tasa);
-  const totalFormated = formatCurrency(total);
+
+  const sumPrices = (priceStr, tasaStr) => {
+    const price = parseFloat(priceStr.replace(/[$.]/g, "").replace(".", ""));
+    const tasa = parseFloat(tasaStr.replace(/[$.]/g, "").replace(".", ""));
+    const total = price + tasa;
+    return `$${total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`;
+  };
+  const totalPrice = sumPrices(flightSelected.price, flightSelected.tasa);
 
   return (
     <div className=" bg-white border border-gray-200 shadow-lg rounded-lg sticky top-20 ">
@@ -36,8 +36,13 @@ const PayCardInfo = (props) => {
       </h3>
       <div className="p-4 space-y-4">
         <div>
-          <span className="text-lg font-semibold text-gray-700">
-            ✈️ {flightSelected.origin} a {flightSelected.destination}
+          <span className="flex text-lg font-semibold gap-2 text-gray-700">
+            <img
+              className="w-8"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7lP1xnXMPSt7QWLGJ2KcnYXP5-0tx12TpUg&s"
+              alt="planeIcon"
+            />
+            {flightSelected.origin} a {flightSelected.destination}
           </span>
         </div>
         <div className="flex justify-between text-sm text-gray-600">
@@ -62,23 +67,39 @@ const PayCardInfo = (props) => {
         </div>
         <div className="flex justify-between items-center py-2 border-t border-b border-gray-200">
           <div className="flex items-center space-x-2">
-            <span>👤</span>
+            <span>
+              <img
+                className="w-8"
+                src="https://png.pngtree.com/png-clipart/20240101/original/pngtree-passenger-icon-passenger-photo-png-image_13989312.png"
+                alt="passengerIcon"
+              />
+            </span>
             <p>1 pasajero</p>
           </div>
-          <p className="text-lg font-semibold text-gray-800">{price}</p>
+          <p className="text-lg font-semibold text-gray-800">
+            {flightSelected.price}
+          </p>
         </div>
         <div className="flex justify-between items-center py-2 border-b border-gray-200">
           <div className="flex items-center space-x-2">
-            <span>⚖️</span>
+            <span>
+              <img
+                className="w-8"
+                src="https://icones.pro/wp-content/uploads/2021/03/icone-de-l-argent-symbole-png-jaune.png"
+                alt="billIcon"
+              />
+            </span>
             <p>Tasas e impuestos</p>
           </div>
-          <p className="text-lg font-semibold text-gray-800">{tasa}</p>
+          <p className="text-lg font-semibold text-gray-800">
+            {flightSelected.tasa}
+          </p>
         </div>
         <div className="flex justify-between items-center pt-2">
           <p className="text-lg font-bold text-gray-700">Total</p>
           <p className="text-2xl font-bold text-gray-800">
             <span className="text-xs">ARS</span>
-            {totalFormated}
+            {totalPrice}
           </p>
         </div>
       </div>

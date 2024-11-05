@@ -7,14 +7,6 @@ const CardFlight = (props) => {
 
   const isSelected = flightSelected.id === flightsDay.id;
 
-
-  function formatCurrency(value) {
-    if (isNaN(value)) return value;
-    return `$${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`;
-  }
-  const price = formatCurrency(flightSelected.price);
- 
-
   return (
     <div className="card w-full bg-base-100 shadow-2xl flex flex-col md:flex-row p-4">
       <div className="flex flex-col justify-between md:w-1/3">
@@ -51,7 +43,7 @@ const CardFlight = (props) => {
           isSelected ? "btn-success" : "btn-warning"
         } text-lg mt-8 mx-2`}
       >
-        Tarifa: {price}
+        Tarifa: {flightsDay.price}
       </button>
     </div>
   );
