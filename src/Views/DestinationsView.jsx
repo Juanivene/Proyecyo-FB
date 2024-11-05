@@ -1,5 +1,7 @@
+import Destinations from "../Components/Destinations/Destinations.jsx";
+
 const DestinationsView = () => {
-  return <div>Destinos</div>;
+  return <Destinations />;
 };
 
 export default DestinationsView;
