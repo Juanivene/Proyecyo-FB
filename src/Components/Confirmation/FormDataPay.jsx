@@ -69,13 +69,9 @@ const FormDataPay = (props) => {
       cancelButtonText: "Revisar detalles",
     }).then((result) => {
       if (result.isConfirmed) {
-        // Activar el loading aquí
-        setLoading(true); // Muestra el Loader
-
+        setLoading(true);
         const booking = { ...customerSelected, idBooking: `${idBooking}` };
         postCustomer(booking);
-
-        // Después de un pequeño retraso, muestra el mensaje de éxito
         setTimeout(() => {
           Swal.fire({
             title: "¡Felicidades!",
@@ -85,15 +81,14 @@ const FormDataPay = (props) => {
             confirmButtonColor: "#FFD700",
           }).then((result) => {
             if (result.isConfirmed) {
-              // Redirigir después de 5 segundos
               setLoading(true);
               setTimeout(() => {
                 window.location.href = `http://localhost:5173/reservation?&customer=${customerSelected.id}`;
-              }, 1000); // Cambié a 5000 para 5 segundos
+              }, 1000);
             }
           });
-          setLoading(false); // Detener el loader después de mostrar el mensaje
-        }, 4000); // Muestra el loader por 2 segundos antes del mensaje de éxito
+          setLoading(false);
+        }, 4000);
       }
       setIsSubmit(false);
     });
@@ -110,7 +105,7 @@ const FormDataPay = (props) => {
 
       <div className="mb-4">
         <label className="block text-sm font-medium text-gray-700">
-          Nombre en la tarjeta
+          Nombre en la tarjeta (sin espacios)
         </label>
         <InputF
           error={errors.name}
@@ -124,7 +119,7 @@ const FormDataPay = (props) => {
               message: "Campo requerido",
             },
             minLength: {
-              value: 5,
+              value: 3,
               message: "Debe contener al menos 3 caracteres",
             },
             maxLength: {
@@ -132,7 +127,8 @@ const FormDataPay = (props) => {
               message: "Debe contener 30 caracteres como maximo",
             },
             pattern: {
-              value: /^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]+ [a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]+$/,
+              value:
+                /^(?:[A-Za-zÁÉÍÓÚáéíóúÑñ]+(?:\s+[A-Za-zÁÉÍÓÚáéíóúÑñ]+){1,4})$/,
               message: "Ingrese un nombre valido",
             },
           }}

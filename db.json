@@ -4,15 +4,9 @@
       "id": "FO1234",
       "origin": "Tucuman",
       "destination": "Buenos Aires",
-      "aitaCode": [
-        "TUC",
-        "AEP"
-      ],
+      "aitaCode": ["TUC", "AEP"],
       "date": "2024-12-01",
-      "hour": [
-        "21:00",
-        "23:30"
-      ],
+      "hour": ["21:00", "23:30"],
       "duration": "2h 30m",
       "price": 80999,
       "tasa": 16199,
@@ -25,15 +19,9 @@
       "id": "FO1235",
       "origin": "Tucuman",
       "destination": "Buenos Aires",
-      "aitaCode": [
-        "TUC",
-        "AEP"
-      ],
+      "aitaCode": ["TUC", "AEP"],
       "date": "2024-12-01",
-      "hour": [
-        "12:30",
-        "15:00"
-      ],
+      "hour": ["12:30", "15:00"],
       "duration": "2h 10m",
       "price": 99999,
       "tasa": 19999,
@@ -46,15 +34,9 @@
       "id": "FO2235",
       "origin": "Mendoza",
       "destination": "Buenos Aires",
-      "aitaCode": [
-        "MDZ",
-        "AEP"
-      ],
+      "aitaCode": ["MDZ", "AEP"],
       "date": "2024-12-01",
-      "hour": [
-        "21:00",
-        "22:45"
-      ],
+      "hour": ["21:00", "22:45"],
       "duration": "1h 45m",
       "price": 99999,
       "tasa": 19999,
@@ -67,15 +49,9 @@
       "id": "FO2236",
       "origin": "Mendoza",
       "destination": "Buenos Aires",
-      "aitaCode": [
-        "MDZ",
-        "AEP"
-      ],
+      "aitaCode": ["MDZ", "AEP"],
       "date": "2024-12-01",
-      "hour": [
-        "12:30",
-        "14:00"
-      ],
+      "hour": ["12:30", "14:00"],
       "duration": "1h 30m",
       "price": 75999,
       "tasa": 15199,
@@ -100,15 +76,9 @@
         "id": "FO1234",
         "origin": "Tucuman",
         "destination": "Buenos Aires",
-        "aitaCode": [
-          "TUC",
-          "AEP"
-        ],
+        "aitaCode": ["TUC", "AEP"],
         "date": "2024-12-01",
-        "hour": [
-          "21:00",
-          "23:30"
-        ],
+        "hour": ["21:00", "23:30"],
         "duration": "2h 30m",
         "price": 80999,
         "tasa": 16199,
@@ -118,204 +88,6 @@
         ]
       },
       "idBooking": "752236"
-    },
-    {
-      "id": "d2c08d68-8b96-4a8e-a82e-349937c7daa5",
-      "name": "evo",
-      "lastname": "morales",
-      "birthdate": "1972-11-27",
-      "dni": "12332112",
-      "email": "evomoraleja@gmail.com",
-      "gender": "female",
-      "nationality": "bolivia",
-      "phonenumber": "1221212112",
-      "flightSelected": {
-        "id": "FO1234",
-        "origin": "Tucuman",
-        "destination": "Buenos Aires",
-        "aitaCode": [
-          "TUC",
-          "AEP"
-        ],
-        "date": "2024-12-01",
-        "hour": [
-          "21:00",
-          "23:30"
-        ],
-        "duration": "2h 30m",
-        "price": 80999,
-        "tasa": 16199,
-        "airport": [
-          "Aropuerto internacional Benjamin Matienzo",
-          "Aeroparque Internacional Jorge Newbery"
-        ]
-      },
-      "idBooking": "368865"
-    },
-    {
-      "id": "d2c08d68-8b96-4a8e-a82e-349937c7daa5",
-      "name": "evo",
-      "lastname": "morales",
-      "birthdate": "1972-11-27",
-      "dni": "12332112",
-      "email": "evomoraleja@gmail.com",
-      "gender": "female",
-      "nationality": "bolivia",
-      "phonenumber": "1221212112",
-      "flightSelected": {
-        "id": "FO1234",
-        "origin": "Tucuman",
-        "destination": "Buenos Aires",
-        "aitaCode": [
-          "TUC",
-          "AEP"
-        ],
-        "date": "2024-12-01",
-        "hour": [
-          "21:00",
-          "23:30"
-        ],
-        "duration": "2h 30m",
-        "price": 80999,
-        "tasa": 16199,
-        "airport": [
-          "Aropuerto internacional Benjamin Matienzo",
-          "Aeroparque Internacional Jorge Newbery"
-        ]
-      },
-      "idBooking": "891906"
-    },
-    {
-      "id": "d2c08d68-8b96-4a8e-a82e-349937c7daa5",
-      "name": "evo",
-      "lastname": "morales",
-      "birthdate": "1972-11-27",
-      "dni": "12332112",
-      "email": "evomoraleja@gmail.com",
-      "gender": "female",
-      "nationality": "bolivia",
-      "phonenumber": "1221212112",
-      "flightSelected": {
-        "id": "FO1234",
-        "origin": "Tucuman",
-        "destination": "Buenos Aires",
-        "aitaCode": [
-          "TUC",
-          "AEP"
-        ],
-        "date": "2024-12-01",
-        "hour": [
-          "21:00",
-          "23:30"
-        ],
-        "duration": "2h 30m",
-        "price": 80999,
-        "tasa": 16199,
-        "airport": [
-          "Aropuerto internacional Benjamin Matienzo",
-          "Aeroparque Internacional Jorge Newbery"
-        ]
-      },
-      "idBooking": "777806"
-    },
-    {
-      "id": "d2c08d68-8b96-4a8e-a82e-349937c7daa5",
-      "name": "evo",
-      "lastname": "morales",
-      "birthdate": "1972-11-27",
-      "dni": "12332112",
-      "email": "evomoraleja@gmail.com",
-      "gender": "female",
-      "nationality": "bolivia",
-      "phonenumber": "1221212112",
-      "flightSelected": {
-        "id": "FO1234",
-        "origin": "Tucuman",
-        "destination": "Buenos Aires",
-        "aitaCode": [
-          "TUC",
-          "AEP"
-        ],
-        "date": "2024-12-01",
-        "hour": [
-          "21:00",
-          "23:30"
-        ],
-        "duration": "2h 30m",
-        "price": 80999,
-        "tasa": 16199,
-        "airport": [
-          "Aropuerto internacional Benjamin Matienzo",
-          "Aeroparque Internacional Jorge Newbery"
-        ]
-      },
-      "idBooking": "784501"
-    },
-    {
-      "id": "d2c08d68-8b96-4a8e-a82e-349937c7daa5",
-      "name": "evo",
-      "lastname": "morales",
-      "birthdate": "1972-11-27",
-      "dni": "12332112",
-      "email": "evomoraleja@gmail.com",
-      "gender": "female",
-      "nationality": "bolivia",
-      "phonenumber": "1221212112",
-      "flightSelected": {
-        "id": "FO1234",
-        "origin": "Tucuman",
-        "destination": "Buenos Aires",
-        "aitaCode": [
-          "TUC",
-          "AEP"
-        ],
-        "date": "2024-12-01",
-        "hour": [
-          "21:00",
-          "23:30"
-        ],
-        "duration": "2h 30m",
-        "price": 80999,
-        "tasa": 16199,
-        "airport": [
-          "Aropuerto internacional Benjamin Matienzo",
-          "Aeroparque Internacional Jorge Newbery"
-        ]
-      },
-      "idBooking": "101931"
-    },
-    {
-      "id": "d2c08d68-8b96-4a8e-a82e-349937c7daa5",
-      "name": "evo",
-      "lastname": "morales",
-      "birthdate": "1972-11-27",
-      "dni": "12332112",
-      "email": "evomoraleja@gmail.com",
-      "gender": "female",
-      "nationality": "bolivia",
-      "phonenumber": "1221212112",
-      "flightSelected": {
-        "id": "FO1234",
-        "origin": "Tucuman",
-        "destination": "Buenos Aires",
-        "aitaCode": [
-          "TUC",
-          "AEP"
-        ],
-        "date": "2024-12-01",
-        "hour": [
-          "21:00",
-          "23:30"
-        ],
-        "duration": "2h 30m",
-        "price": 80999,
-        "tasa": 16199,
-        "airport": [
-          "Aropuerto internacional Benjamin Matienzo",
-          "Aeroparque Internacional Jorge Newbery"
-        ]
-      },
-      "idBooking": "204915"
     }
   ]
 }

@@ -5,6 +5,14 @@ import { urlsImages } from "../../utilities";
 const CardInfoFlight = (props) => {
   const { flightSelected, dateString } = props;
 
+ 
+  function formatCurrency(value) {
+    if (isNaN(value)) return value;
+    return `$${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`;
+  }
+  const price = formatCurrency(flightSelected.price);
+
+
   let url;
   switch (flightSelected.destination) {
     case "Buenos Aires":
@@ -48,10 +56,10 @@ const CardInfoFlight = (props) => {
         </div>
       </div>
       <div className="card-body	bg-slate-200 rounded-b-xl">
-        <h2 className="card-title">TOTAL:</h2>
+        <h2 className="card-title">PRECIO:</h2>
         <button className="btn">
           ARS
-          <div className="badge badge-warning">${flightSelected.price}</div>
+          <div className="badge badge-warning">{price}</div>
         </button>
       </div>
     </section>

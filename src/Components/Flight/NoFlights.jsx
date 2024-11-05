@@ -1,6 +1,6 @@
 const NoFlights = () => {
   return (
-    <div className="flex flex-col items-center justify-center  bg-gray-100 text-center p-6">
+    <div className="flex flex-col items-center justify-center pb-24 bg-gray-100 text-center p-6">
       <img
         src="https://cdn-icons-png.flaticon.com/128/595/595067.png"
         alt="Flybondi Logo"
@@ -15,7 +15,7 @@ const NoFlights = () => {
       </p>
       <button
         onClick={() => window.history.back()}
-        className="btn bg-yellow-500 text-white hover:bg-yellow-400 px-6 py-3 rounded-lg shadow-md"
+        className="btn bg-yellow-500 text-white hover:bg-yellow-400 px-6 py-3 rounded-lg shadow-md mb-20 sm:mb-0"
       >
         Volver a buscar
       </button>
