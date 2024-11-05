@@ -6,9 +6,11 @@ import Swal from "sweetalert2";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { postCustomerFn } from "../../api/flight";
 import { toast } from "sonner";
+import { useLoading } from "../../Store/useLoading";
 
 const FormDataPay = (props) => {
   const { isClose, isSubmit, setIsSubmit, customerSelected } = props;
+  const { setLoading } = useLoading();
 
   const {
     register,
@@ -34,7 +36,7 @@ const FormDataPay = (props) => {
     mutationFn: postCustomerFn,
     onSuccess: () => {
       toast.dismiss();
-      toast.success("Datos con éxito");
+      toast.success("Datos guardados con éxito");
 
       queryClient.invalidateQueries({
         queryKey: ["customers"],
@@ -63,23 +65,30 @@ const FormDataPay = (props) => {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Si, confirmar",
+      confirmButtonText: "Sí, confirmar",
       cancelButtonText: "Revisar detalles",
     }).then((result) => {
       if (result.isConfirmed) {
+        setLoading(true);
         const booking = { ...customerSelected, idBooking: `${idBooking}` };
         postCustomer(booking);
-        Swal.fire({
-          title: "¡Felicidades!",
-          html: `Tu reserva se ha generado con exito<br/>Tu codigo de reserva es: <strong>${booking.idBooking}</strong> `,
-          icon: "success",
-          confirmButtonText: "Ir a mi reserva",
-          confirmButtonColor: "#FFD700",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            window.location.href = `http://localhost:5173/reservation?&customer=${customerSelected.id}`;
-          }
-        });
+        setTimeout(() => {
+          Swal.fire({
+            title: "¡Felicidades!",
+            html: `Tu reserva se ha generado con éxito<br/>Tu código de reserva es: <strong>${booking.idBooking}</strong>`,
+            icon: "success",
+            confirmButtonText: "Ir a mi reserva",
+            confirmButtonColor: "#FFD700",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              setLoading(true);
+              setTimeout(() => {
+                window.location.href = `http://localhost:5173/reservation?&customer=${customerSelected.id}`;
+              }, 1000);
+            }
+          });
+          setLoading(false);
+        }, 4000);
       }
       setIsSubmit(false);
     });
@@ -96,7 +105,7 @@ const FormDataPay = (props) => {
 
       <div className="mb-4">
         <label className="block text-sm font-medium text-gray-700">
-          Nombre en la tarjeta
+          Nombre en la tarjeta (sin espacios)
         </label>
         <InputF
           error={errors.name}
@@ -110,7 +119,7 @@ const FormDataPay = (props) => {
               message: "Campo requerido",
             },
             minLength: {
-              value: 5,
+              value: 3,
               message: "Debe contener al menos 3 caracteres",
             },
             maxLength: {
@@ -118,7 +127,8 @@ const FormDataPay = (props) => {
               message: "Debe contener 30 caracteres como maximo",
             },
             pattern: {
-              value: /^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]+ [a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]+$/,
+              value:
+                /^(?:[A-Za-zÁÉÍÓÚáéíóúÑñ]+(?:\s+[A-Za-zÁÉÍÓÚáéíóúÑñ]+){1,4})$/,
               message: "Ingrese un nombre valido",
             },
           }}

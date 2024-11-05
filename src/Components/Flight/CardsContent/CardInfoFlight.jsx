@@ -48,10 +48,10 @@ const CardInfoFlight = (props) => {
         </div>
       </div>
       <div className="card-body	bg-slate-200 rounded-b-xl">
-        <h2 className="card-title">TOTAL:</h2>
+        <h2 className="card-title">PRECIO:</h2>
         <button className="btn">
           ARS
-          <div className="badge badge-warning">${flightSelected.price}</div>
+          <div className="badge badge-warning">{flightSelected.price}</div>
         </button>
       </div>
     </section>

@@ -27,7 +27,7 @@ const ContentReservation = (props) => {
     return <NewError />;
   }
   return (
-    <Grid container gap={4} className="m-3">
+    <Grid container gap={4} className="m-3 mb-5">
       <Grid item xs={12} lg={7} className="space-y-4">
         <ConfirmCardFlight customerSelected={booking} />
         <ConfirmCardDataClient customerSelected={booking} isBooking={true} />

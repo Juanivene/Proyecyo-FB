@@ -4,18 +4,12 @@
       "id": "FO1234",
       "origin": "Tucuman",
       "destination": "Buenos Aires",
-      "aitaCode": [
-        "TUC",
-        "AEP"
-      ],
+      "aitaCode": ["TUC", "AEP"],
       "date": "2024-12-01",
-      "hour": [
-        "21:00",
-        "23:30"
-      ],
+      "hour": ["21:00", "23:30"],
       "duration": "2h 30m",
-      "price": 80999,
-      "tasa": 16199,
+      "price": "$80.999",
+      "tasa": "$16.199",
       "airport": [
         "Aropuerto internacional Benjamin Matienzo",
         "Aeroparque Internacional Jorge Newbery"
@@ -25,18 +19,12 @@
       "id": "FO1235",
       "origin": "Tucuman",
       "destination": "Buenos Aires",
-      "aitaCode": [
-        "TUC",
-        "AEP"
-      ],
+      "aitaCode": ["TUC", "AEP"],
       "date": "2024-12-01",
-      "hour": [
-        "12:30",
-        "15:00"
-      ],
+      "hour": ["12:30", "15:00"],
       "duration": "2h 10m",
-      "price": 99999,
-      "tasa": 19999,
+      "price": "$99.999",
+      "tasa": "$19.999",
       "airport": [
         "Aropuerto internacional Benjamin Matienzo",
         "Aeroparque Internacional Jorge Newbery"
@@ -46,15 +34,9 @@
       "id": "FO2235",
       "origin": "Mendoza",
       "destination": "Buenos Aires",
-      "aitaCode": [
-        "MDZ",
-        "AEP"
-      ],
+      "aitaCode": ["MDZ", "AEP"],
       "date": "2024-12-01",
-      "hour": [
-        "21:00",
-        "22:45"
-      ],
+      "hour": ["21:00", "22:45"],
       "duration": "1h 45m",
       "price": 99999,
       "tasa": 19999,
@@ -67,15 +49,9 @@
       "id": "FO2236",
       "origin": "Mendoza",
       "destination": "Buenos Aires",
-      "aitaCode": [
-        "MDZ",
-        "AEP"
-      ],
+      "aitaCode": ["MDZ", "AEP"],
       "date": "2024-12-01",
-      "hour": [
-        "12:30",
-        "14:00"
-      ],
+      "hour": ["12:30", "14:00"],
       "duration": "1h 30m",
       "price": 75999,
       "tasa": 15199,
@@ -100,15 +76,9 @@
         "id": "FO1234",
         "origin": "Tucuman",
         "destination": "Buenos Aires",
-        "aitaCode": [
-          "TUC",
-          "AEP"
-        ],
+        "aitaCode": ["TUC", "AEP"],
         "date": "2024-12-01",
-        "hour": [
-          "21:00",
-          "23:30"
-        ],
+        "hour": ["21:00", "23:30"],
         "duration": "2h 30m",
         "price": 80999,
         "tasa": 16199,
@@ -118,6 +88,33 @@
         ]
       },
       "idBooking": "752236"
+    },
+    {
+      "id": "82b928cf-8e3b-4592-8a54-867645d43b1c",
+      "name": "ezequiel",
+      "lastname": "amin",
+      "birthdate": "2003-11-27",
+      "dni": "45127062",
+      "email": "venezianojuani@gmail.com",
+      "gender": "male",
+      "nationality": "brasil",
+      "phonenumber": "3453588888",
+      "flightSelected": {
+        "id": "FO1234",
+        "origin": "Tucuman",
+        "destination": "Buenos Aires",
+        "aitaCode": ["TUC", "AEP"],
+        "date": "2024-12-01",
+        "hour": ["21:00", "23:30"],
+        "duration": "2h 30m",
+        "price": 80999,
+        "tasa": 16199,
+        "airport": [
+          "Aropuerto internacional Benjamin Matienzo",
+          "Aeroparque Internacional Jorge Newbery"
+        ]
+      },
+      "idBooking": "857426"
     }
   ]
 }
