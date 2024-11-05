@@ -7,7 +7,7 @@ import Loader from "../../Components/ui/Loader";
 const RootView = () => {
   const { isLoading } = useLoading();
   return (
-    <section className="flex flex-col min-h-screen">
+    <section className="">
       <Header />
       <main>
         {isLoading ? <Loader /> : ""}

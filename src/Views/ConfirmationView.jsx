@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import FormDataPay from "../Components/Confirmation/FormDataPay";
 import Swal from "sweetalert2";
 import { useEffect, useRef, useState } from "react";
+import Error404 from "../Components/Confirmation/Error404";
 
 const ConfirmationView = () => {
   const urlParams = new URLSearchParams(window.location.search);
@@ -43,6 +44,9 @@ const ConfirmationView = () => {
     });
   };
 
+  if (!customerSelected) {
+    return <Error404 />;
+  }
   return (
     <Grid container gap={3} className={`m-10`}>
       <Grid item xs={12} sm={12} md={12} lg={7}>
