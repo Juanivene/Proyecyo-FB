@@ -1,6 +1,6 @@
 const NewError = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen mx-4">
+    <div className="flex items-center justify-center m-64 md:m-48 mx-4">
       <div className="text-center p-6 rounded-lg bg-white shadow-xl max-w-md">
         <h1 className="text-2xl font-semibold text-red-500 mb-4">Error</h1>
         <p className="text-gray-700 mb-6">
