@@ -9,9 +9,11 @@ import { getflightSelectedFn } from "../../api/flight";
 
 import Alert from "../ui/Alert";
 import { useEffect, useState } from "react";
+import { useLoading } from "../../Store/useLoading";
 
 const FormDataClient = (props) => {
   const { id } = props;
+  const { setLoading } = useLoading();
 
   const urlParams = new URLSearchParams(window.location.search);
   const idCustomerSelected = urlParams.get("customer");
@@ -91,7 +93,10 @@ const FormDataClient = (props) => {
     }
 
     setCustomerInLs(updatedCustomers);
-    window.location.href = `http://localhost:5173/confirmation?&customer=${customer.id}`;
+    setLoading(true);
+    setTimeout(() => {
+      window.location.href = `http://localhost:5173/confirmation?&customer=${customer.id}`;
+    }, 2500);
   };
   return (
     <form

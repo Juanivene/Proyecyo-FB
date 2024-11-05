@@ -1,7 +1,9 @@
 import { useForm } from "react-hook-form";
 import Alert from "./Alert";
+import { useLoading } from "../../Store/useLoading";
 
 const FormDetailFlight = () => {
+  const { setLoading } = useLoading();
   const {
     register,
     handleSubmit,
@@ -21,7 +23,10 @@ const FormDetailFlight = () => {
 
   const onSubmit = (data) => {
     const { date, destination, origin } = data;
-    window.location.href = `http://localhost:5173/flight?origen=${origin}&destino=${destination}&fecha=${date}`;
+    setLoading(true);
+    setTimeout(() => {
+      window.location.href = `http://localhost:5173/flight?origen=${origin}&destino=${destination}&fecha=${date}`;
+    }, 3000);
   };
 
   return (

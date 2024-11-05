@@ -12,9 +12,12 @@ import NewError from "./NewError";
 import Swal from "sweetalert2";
 import NoFlights from "./NoFlights";
 import { getFlightFn } from "../../api/flight";
+import { useLoading } from "../../Store/useLoading";
 
 const ContentFlight = (props) => {
   const { origin, destination, date } = props;
+
+  const { setLoading } = useLoading();
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -44,7 +47,10 @@ const ContentFlight = (props) => {
         showConfirmButton: false,
       });
     } else {
-      window.location.href = `http://localhost:5173/pay?&origin=${flightSelected.origin}&flight=${flightSelected.id}`;
+      setLoading(true);
+      setTimeout(() => {
+        window.location.href = `http://localhost:5173/pay?&origin=${flightSelected.origin}&flight=${flightSelected.id}`;
+      }, 2000);
     }
   };
 
