@@ -67,7 +67,7 @@ const ConfirmationView = () => {
             Volver a Datos personales
           </Link>
           <button
-            className="btn btn-wide"
+            className="btn btn-wide hidden lg:block"
             onClick={() => modal.current.showModal()}
           >
             ¡Ir al pago!
@@ -95,16 +95,16 @@ const ConfirmationView = () => {
         </div>
       </Grid>
 
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={5}
-        className={`sticky top-20 hidden lg:block`}
-      >
+      <Grid item xs={12} xl={5} className={`sticky top-20 text-center`}>
         <PayCardInfo id={customerSelected.flightSelected.id} />
+        <div className="flex justify-center mt-4">
+          <button
+            className="btn btn-wide block lg:hidden"
+            onClick={() => modal.current.showModal()}
+          >
+            ¡Ir al pago!
+          </button>
+        </div>
       </Grid>
     </Grid>
   );
