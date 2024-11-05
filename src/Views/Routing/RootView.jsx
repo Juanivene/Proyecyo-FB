@@ -6,7 +6,7 @@ const RootView = () => {
   return (
     <section className="flex flex-col min-h-screen">
       <Header />
-      <main className="mt-16 flex-grow">
+      <main>
         <Outlet />
       </main>
       <Footer />
