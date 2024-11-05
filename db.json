@@ -38,8 +38,8 @@
       "date": "2024-12-01",
       "hour": ["21:00", "22:45"],
       "duration": "1h 45m",
-      "price": 99999,
-      "tasa": 19999,
+      "price": "$99.999",
+      "tasa": "$19.999",
       "airport": [
         "Aeropuerto Internacional El Plumerillo",
         "Aeroparque Internacional Jorge Newbery"
@@ -53,8 +53,8 @@
       "date": "2024-12-01",
       "hour": ["12:30", "14:00"],
       "duration": "1h 30m",
-      "price": 75999,
-      "tasa": 15199,
+      "price": "$75.999",
+      "tasa": "$15.199",
       "airport": [
         "Aeropuerto Internacional El Plumerillo",
         "Aeroparque Internacional Jorge Newbery"
@@ -80,8 +80,8 @@
         "date": "2024-12-01",
         "hour": ["21:00", "23:30"],
         "duration": "2h 30m",
-        "price": 80999,
-        "tasa": 16199,
+        "price": "$80.999",
+        "tasa": "$16.199",
         "airport": [
           "Aropuerto internacional Benjamin Matienzo",
           "Aeroparque Internacional Jorge Newbery"
@@ -107,8 +107,8 @@
         "date": "2024-12-01",
         "hour": ["21:00", "23:30"],
         "duration": "2h 30m",
-        "price": 80999,
-        "tasa": 16199,
+        "price": "$80.999",
+        "tasa": "$16.199",
         "airport": [
           "Aropuerto internacional Benjamin Matienzo",
           "Aeroparque Internacional Jorge Newbery"
