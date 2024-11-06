@@ -7,7 +7,7 @@ const CardInfoFlight = (props) => {
 
   let url;
   switch (flightSelected.destination) {
-    case "Buenos Aires":
+    case "Tucuman":
       url = urlsImages[0];
       break;
     case "Mendoza":
@@ -16,7 +16,7 @@ const CardInfoFlight = (props) => {
     case "Bariloche":
       url = urlsImages[2];
       break;
-    case "Tucuman":
+    case "Buenos Aires":
       url = urlsImages[3];
       break;
     case "Cordoba":
