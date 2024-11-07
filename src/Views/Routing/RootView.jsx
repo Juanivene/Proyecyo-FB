@@ -7,7 +7,7 @@ import Loader from "../../Components/ui/Loader";
 const RootView = () => {
   const { isLoading } = useLoading();
   return (
-    <section className="">
+    <section>
       <Header />
       <main>
         {isLoading ? <Loader /> : ""}
