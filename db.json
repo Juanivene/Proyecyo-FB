@@ -193,6 +193,39 @@
         ]
       },
       "idBooking": "911740"
+    },
+    {
+      "id": "5fb9557d-9de7-420a-b4d8-ca5382a5fccb",
+      "name": "eze",
+      "lastname": "amin",
+      "birthdate": "2002-04-02",
+      "dni": "45127062",
+      "email": "ezeamin@gmail.com",
+      "gender": "male",
+      "nationality": "uruguay",
+      "phonenumber": "3453588888",
+      "flightSelected": {
+        "id": "FO1234",
+        "origin": "Tucuman",
+        "destination": "Buenos Aires",
+        "aitaCode": [
+          "TUC",
+          "AEP"
+        ],
+        "date": "2024-12-01",
+        "hour": [
+          "21:00",
+          "23:30"
+        ],
+        "duration": "2h 30m",
+        "price": "$80.999",
+        "tasa": "$16.199",
+        "airport": [
+          "Aropuerto internacional Benjamin Matienzo",
+          "Aeroparque Internacional Jorge Newbery"
+        ]
+      },
+      "idBooking": "556468"
     }
   ]
 }
