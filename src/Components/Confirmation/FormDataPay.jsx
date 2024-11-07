@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
 import InputF from "../ui/InputF";
-import PropTypes, { array } from "prop-types";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -8,6 +7,7 @@ import { postCustomerFn } from "../../api/flight";
 import { toast } from "sonner";
 import { useLoading } from "../../Store/useLoading";
 import { validateCard } from "../utilities";
+import PropTypes from "prop-types";
 
 const FormDataPay = (props) => {
   const { isClose, isSubmit, setIsSubmit, customerSelected } = props;

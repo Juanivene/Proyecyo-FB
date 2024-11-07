@@ -5,7 +5,7 @@ import ConfirmCardFlight from "../Components/Confirmation/ConfirmCardFlight";
 import { Link } from "react-router-dom";
 import FormDataPay from "../Components/Confirmation/FormDataPay";
 import Swal from "sweetalert2";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Error404 from "../Components/Confirmation/Error404";
 
 const ConfirmationView = () => {
