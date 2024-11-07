@@ -7,10 +7,10 @@ const CardInfoFlight = (props) => {
 
   let url;
   switch (flightSelected.destination) {
-    case "Tucuman":
+    case "Mendoza":
       url = urlsImages[0];
       break;
-    case "Mendoza":
+    case "Cordoba":
       url = urlsImages[1];
       break;
     case "Bariloche":
@@ -19,11 +19,12 @@ const CardInfoFlight = (props) => {
     case "Buenos Aires":
       url = urlsImages[3];
       break;
-    case "Cordoba":
+    case "Tucuman":
       url = urlsImages[4];
       break;
+
     default:
-      url = urlsImages[0];
+      url = urlsImages[3];
   }
   return (
     <section className="w-full md:w-64 lg:w-96 shadow-xl rounded-b-xl">
