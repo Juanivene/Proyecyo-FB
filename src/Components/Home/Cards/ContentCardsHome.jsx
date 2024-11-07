@@ -4,6 +4,9 @@ import CardHome from "./CardHome";
 import { infoCardsHome, infoCardsLowCost } from "./InfoCardsHome";
 
 const ContentCardsHome = () => {
+  const handleClick = () => {
+    window.location.href = "/info";
+  };
   return (
     <div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 m-5">
@@ -41,7 +44,7 @@ const ContentCardsHome = () => {
       <h2 className="card-title text-2xl font-bold text-gray-500 mb-4 flex justify-center my-10">
         ¿Cómo hacemos para darte los precios más bajos?
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 m-5">
+      <div className="grid grid-cols-1  md:grid-cols-3 gap-8 m-5">
         {infoCardsLowCost.map((e, i) => {
           return (
             <CardHome
@@ -53,8 +56,8 @@ const ContentCardsHome = () => {
           );
         })}
       </div>
-      <div className="text-center my-10 mx-96">
-        <button className="btn btn-block">
+      <div className="text-center my-10 lg:mx-96 mx-10">
+        <button onClick={handleClick} className="btn btn-block">
           ¿Quieres saber mas sobre vuelos low cost?
         </button>
       </div>
