@@ -1,39 +1,12 @@
 {
   "flights": [
     {
-      "id": "FO1234",
-      "origin": "Tucuman",
-      "destination": "Buenos Aires",
-      "aitaCode": [
-        "TUC",
-        "AEP"
-      ],
-      "date": "2024-12-01",
-      "hour": [
-        "21:00",
-        "23:30"
-      ],
-      "duration": "2h 30m",
-      "price": "$80.999",
-      "tasa": "$16.199",
-      "airport": [
-        "Aropuerto internacional Benjamin Matienzo",
-        "Aeroparque Internacional Jorge Newbery"
-      ]
-    },
-    {
       "id": "FO1235",
       "origin": "Tucuman",
       "destination": "Buenos Aires",
-      "aitaCode": [
-        "TUC",
-        "AEP"
-      ],
+      "aitaCode": ["TUC", "AEP"],
       "date": "2024-12-01",
-      "hour": [
-        "12:30",
-        "15:00"
-      ],
+      "hour": ["12:30", "15:00"],
       "duration": "2h 10m",
       "price": "$99.999",
       "tasa": "$19.999",
@@ -43,39 +16,58 @@
       ]
     },
     {
-      "id": "FO2235",
-      "origin": "Mendoza",
+      "id": "FO1234",
+      "origin": "Tucuman",
       "destination": "Buenos Aires",
-      "aitaCode": [
-        "MDZ",
-        "AEP"
-      ],
+      "aitaCode": ["TUC", "AEP"],
       "date": "2024-12-01",
-      "hour": [
-        "21:00",
-        "22:45"
-      ],
-      "duration": "1h 45m",
-      "price": "$99.999",
-      "tasa": "$19.999",
+      "hour": ["21:00", "23:30"],
+      "duration": "2h 30m",
+      "price": "$80.999",
+      "tasa": "$16.199",
       "airport": [
-        "Aeropuerto Internacional El Plumerillo",
+        "Aropuerto internacional Benjamin Matienzo",
         "Aeroparque Internacional Jorge Newbery"
+      ]
+    },
+
+    {
+      "id": "FO4234",
+      "origin": "Buenos Aires",
+      "destination": "Tucuman",
+      "aitaCode": ["AEP", "TUC"],
+      "date": "2024-12-01",
+      "hour": ["14:00", "16:30"],
+      "duration": "2h 30m",
+      "price": "$30.999",
+      "tasa": "$7.199",
+      "airport": [
+        "Aeroparque Internacional Jorge Newbery",
+        "Aropuerto internacional Benjamin Matienzo"
+      ]
+    },
+    {
+      "id": "FO4235",
+      "origin": "Buenos Aires",
+      "destination": "Tucuman",
+      "aitaCode": ["AEP", "TUC"],
+      "date": "2024-12-01",
+      "hour": ["19:00", "21:30"],
+      "duration": "2h 30m",
+      "price": "$45.999",
+      "tasa": "$12.199",
+      "airport": [
+        "Aeroparque Internacional Jorge Newbery",
+        "Aropuerto internacional Benjamin Matienzo"
       ]
     },
     {
       "id": "FO2236",
       "origin": "Mendoza",
       "destination": "Buenos Aires",
-      "aitaCode": [
-        "MDZ",
-        "AEP"
-      ],
+      "aitaCode": ["MDZ", "AEP"],
       "date": "2024-12-01",
-      "hour": [
-        "12:30",
-        "14:00"
-      ],
+      "hour": ["12:30", "14:00"],
       "duration": "1h 30m",
       "price": "$75.999",
       "tasa": "$15.199",
@@ -85,18 +77,58 @@
       ]
     },
     {
+      "id": "FO2235",
+      "origin": "Mendoza",
+      "destination": "Buenos Aires",
+      "aitaCode": ["MDZ", "AEP"],
+      "date": "2024-12-01",
+      "hour": ["21:00", "22:45"],
+      "duration": "1h 45m",
+      "price": "$99.999",
+      "tasa": "$19.999",
+      "airport": [
+        "Aeropuerto Internacional El Plumerillo",
+        "Aeroparque Internacional Jorge Newbery"
+      ]
+    },
+
+    {
+      "id": "FO5235",
+      "origin": "Buenos Aires",
+      "destination": "Mendoza",
+      "aitaCode": ["AEP", "MDZ"],
+      "date": "2024-12-01",
+      "hour": ["15:00", "16:30"],
+      "duration": "1h 30m",
+      "price": "$25.999",
+      "tasa": "$4.099",
+      "airport": [
+        "Aeroparque Internacional Jorge Newbery",
+        "Aeropuerto Internacional El Plumerillo"
+      ]
+    },
+    {
+      "id": "FO5236",
+      "origin": "Buenos Aires",
+      "destination": "Mendoza",
+      "aitaCode": ["AEP", "MDZ"],
+      "date": "2024-12-01",
+      "hour": ["19:00", "20:30"],
+      "duration": "1h 30m",
+      "price": "$35.999",
+      "tasa": "$5.099",
+      "airport": [
+        "Aeroparque Internacional Jorge Newbery",
+        "Aeropuerto Internacional El Plumerillo"
+      ]
+    },
+    {
       "id": "FO3236",
       "origin": "Bariloche",
       "destination": "Buenos Aires",
-      "aitaCode": [
-        "BRC",
-        "AEP"
-      ],
+      "aitaCode": ["BRC", "AEP"],
       "date": "2024-12-01",
-      "hour": [
-        "12:30",
-        "14:45"
-      ],
+      "hour": ["12:30", "14:45"],
       "duration": "2h 15m",
       "price": "$45.999",
       "tasa": "$9.199",
@@ -109,21 +141,105 @@
       "id": "FO3235",
       "origin": "Bariloche",
       "destination": "Buenos Aires",
-      "aitaCode": [
-        "BRC",
-        "AEP"
-      ],
+      "aitaCode": ["BRC", "AEP"],
       "date": "2024-12-01",
-      "hour": [
-        "17:30",
-        "19:45"
-      ],
+      "hour": ["17:30", "19:45"],
       "duration": "2h 15m",
       "price": "$65.999",
       "tasa": "$12.199",
       "airport": [
         " Aeropuerto Internacional Teniente Luis Candelaria",
         "Aeroparque Internacional Jorge Newbery"
+      ]
+    },
+    {
+      "id": "FO7236",
+      "origin": "Buenos Aires",
+      "destination": "Bariloche",
+      "aitaCode": ["AEP", "BRC"],
+      "date": "2024-12-01",
+      "hour": ["12:30", "14:45"],
+      "duration": "2h 15m",
+      "price": "$73.999",
+      "tasa": "$16.199",
+      "airport": [
+        "Aeroparque Internacional Jorge Newbery",
+        "Aeropuerto Internacional Teniente Luis Candelaria"
+      ]
+    },
+    {
+      "id": "FO7237",
+      "origin": "Buenos Aires",
+      "destination": "Bariloche",
+      "aitaCode": ["AEP", "BRC"],
+      "date": "2024-12-01",
+      "hour": ["19:30", "21:45"],
+      "duration": "2h 15m",
+      "price": "$63.999",
+      "tasa": "$13.199",
+      "airport": [
+        "Aeroparque Internacional Jorge Newbery",
+        "Aeropuerto Internacional Teniente Luis Candelaria"
+      ]
+    },
+    {
+      "id": "FO9236",
+      "origin": "Cordoba",
+      "destination": "Buenos Aires",
+      "aitaCode": ["COR", "AEP"],
+      "date": "2024-12-01",
+      "hour": ["19:30", "20:45"],
+      "duration": "1h 15m",
+      "price": "$25.999",
+      "tasa": "$3.199",
+      "airport": [
+        "Aeroparque Internacional Jorge Newbery",
+        "Aeropuerto Internacional Ingeniero Aeronáutico Ambrosio Taravella"
+      ]
+    },
+    {
+      "id": "FO9237",
+      "origin": "Cordoba",
+      "destination": "Buenos Aires",
+      "aitaCode": ["COR", "AEP"],
+      "date": "2024-12-01",
+      "hour": ["23:00", "00:15"],
+      "duration": "1h 15m",
+      "price": "$45.999",
+      "tasa": "$8.199",
+      "airport": [
+        "Aeroparque Internacional Jorge Newbery",
+        "Aeropuerto Internacional Ingeniero Aeronáutico Ambrosio Taravella"
+      ]
+    },
+    {
+      "id": "FO8236",
+      "origin": "Buenos Aires",
+      "destination": "Cordoba",
+      "aitaCode": ["AEP", "COR"],
+      "date": "2024-12-01",
+      "hour": ["19:30", "20:45"],
+      "duration": "1h 15m",
+      "price": "$20.999",
+      "tasa": "$3.199",
+      "airport": [
+        "Aeroparque Internacional Jorge Newbery",
+        "Aeropuerto Internacional Ingeniero Aeronáutico Ambrosio Taravella"
+      ]
+    },
+    {
+      "id": "FO8237",
+      "origin": "Buenos Aires",
+      "destination": "Cordoba",
+      "aitaCode": ["AEP", "COR"],
+      "date": "2024-12-01",
+      "hour": ["22:30", "21:45"],
+      "duration": "1h 15m",
+      "price": "$30.999",
+      "tasa": "$8.599",
+      "airport": [
+        "Aeroparque Internacional Jorge Newbery",
+        "Aeropuerto Internacional Ingeniero Aeronáutico Ambrosio Taravella"
       ]
     }
   ],
@@ -142,15 +258,9 @@
         "id": "FO1235",
         "origin": "Tucuman",
         "destination": "Buenos Aires",
-        "aitaCode": [
-          "TUC",
-          "AEP"
-        ],
+        "aitaCode": ["TUC", "AEP"],
         "date": "2024-12-01",
-        "hour": [
-          "12:30",
-          "15:00"
-        ],
+        "hour": ["12:30", "15:00"],
         "duration": "2h 10m",
         "price": "$99.999",
         "tasa": "$19.999",
@@ -175,15 +285,9 @@
         "id": "FO1235",
         "origin": "Tucuman",
         "destination": "Buenos Aires",
-        "aitaCode": [
-          "TUC",
-          "AEP"
-        ],
+        "aitaCode": ["TUC", "AEP"],
         "date": "2024-12-01",
-        "hour": [
-          "12:30",
-          "15:00"
-        ],
+        "hour": ["12:30", "15:00"],
         "duration": "2h 10m",
         "price": "$99.999",
         "tasa": "$19.999",
@@ -208,15 +312,9 @@
         "id": "FO1234",
         "origin": "Tucuman",
         "destination": "Buenos Aires",
-        "aitaCode": [
-          "TUC",
-          "AEP"
-        ],
+        "aitaCode": ["TUC", "AEP"],
         "date": "2024-12-01",
-        "hour": [
-          "21:00",
-          "23:30"
-        ],
+        "hour": ["21:00", "23:30"],
         "duration": "2h 30m",
         "price": "$80.999",
         "tasa": "$16.199",

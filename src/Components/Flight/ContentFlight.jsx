@@ -109,7 +109,7 @@ const ContentFlight = (props) => {
       </Grid>
 
       <Grid item xs={4} className="hidden lg:block">
-        <div className="my-14">
+        <div className="my-14 sticky top-20">
           <CardInfoFlight
             flightSelected={flightSelected}
             dateString={dateString}
