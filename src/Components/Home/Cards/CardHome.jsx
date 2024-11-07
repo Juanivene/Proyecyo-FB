@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const CardHome = (props) => {
   const { image, title, description } = props;
   return (
-    <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+    <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-xl transition-shadow duration-300">
       <div className="flex items-center mb-4">
         <img
           className="w-20 h-auto object-cover "

@@ -1,4 +1,4 @@
-import { urlsImages } from "../utilities";
+import { urlsImages } from "../../utilities";
 import ImageCarousel from "./ImageCarousel";
 
 const Carousel = () => {

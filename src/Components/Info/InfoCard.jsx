@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const InfoCard = (props) => {
   const { icon: Icon, title, description } = props;
   return (
@@ -12,3 +14,8 @@ const InfoCard = (props) => {
 };
 
 export default InfoCard;
+InfoCard.propTypes = {
+  icon: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};

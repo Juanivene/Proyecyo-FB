@@ -39,3 +39,25 @@ export const infoCardsHome = [
       "https://static.flybondi.com/f/77475/300x115/30f3334ab6/giftcard.svg",
   },
 ];
+
+export const infoCardsLowCost = [
+  {
+    title: "Flota única",
+    description:
+      "Un solo tipo de avión, un solo tipo de asientos. ¡Le decimos sí a la clase única!",
+    image:
+      "https://static.flybondi.com/f/77475/x/9a877e2688/flota-unica-final.svg",
+  },
+  {
+    title: "Solo pagás por lo que necesitás",
+    description:
+      "¿Ventana o pasillo? ¿equipaje en cabina o solo de mano? Te dejamos a vos decidir qué querés que tu pasaje incluya.",
+    image: "https://static.flybondi.com/f/77475/x/bd4a7132f9/payments.svg",
+  },
+  {
+    title: "Comprás online",
+    description:
+      "Sacá tu pasaje con tu celular o compu donde quieras, siempre a través directo de nuestra web. Sin comisiones.",
+    image: "https://static.flybondi.com/f/77475/x/fbc5df2075/compra-online.svg",
+  },
+];

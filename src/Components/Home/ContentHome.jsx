@@ -1,25 +1,16 @@
-import Grid from "../Grid/Grid";
-import CardHome from "./CardHome";
+import DestinationCard from "../Destinations/DestinationCard";
+import destinations from "../Destinations/destinations";
+import CardHome from "./Cards/CardHome";
 import FormDetailFlight from "./FormDetailFlight";
-import { infoCardsHome } from "./InfoCardsHome";
+import { infoCardsHome, infoCardsLowCost } from "./Cards/InfoCardsHome";
+import ContentCardsHome from "./Cards/ContentCardsHome";
 
 const ContentHome = () => {
   return (
     <>
       <FormDetailFlight />
 
-      <div className="grid grid-cols-4 md:grid-cols-2 lg:grid-cols-3 gap-8 m-5">
-        {infoCardsHome.map((e, i) => {
-          return (
-            <CardHome
-              key={i}
-              title={e.title}
-              description={e.description}
-              image={e.image}
-            />
-          );
-        })}
-      </div>
+      <ContentCardsHome />
     </>
   );
 };
