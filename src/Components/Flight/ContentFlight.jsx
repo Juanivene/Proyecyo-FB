@@ -71,7 +71,7 @@ const ContentFlight = (props) => {
   if (flightsDay && flightsDay.length === 0) {
     return <NoFlights />;
   }
-  console.log(innerWidth);
+
 
   return (
     <Grid container gap={8} className="my-">
