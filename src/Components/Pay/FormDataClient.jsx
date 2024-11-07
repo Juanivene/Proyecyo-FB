@@ -251,7 +251,7 @@ const FormDataClient = (props) => {
           register={register}
         />
       </div>
-      <div className="divider">🧦</div>
+      <div className="divider">🛩</div>
       <div className="card-body">
         <h2 className="card-title text-xl font-bold text-gray-800">Genero</h2>
         <select
@@ -276,7 +276,7 @@ const FormDataClient = (props) => {
           Consulta nuestra web sobre accesebilidad para esta informacion
         </a>
       </div>
-      <div className="divider">🍕</div>
+      <div className="divider">🛩</div>
       <div className="card-body">
         <h2 className="card-title text-xl font-bold text-gray-800">
           Tus datos de contacto
@@ -324,7 +324,7 @@ const FormDataClient = (props) => {
             />
           </Grid>
         </Grid>
-        <div className="divider">🍔</div>
+        <div className="divider">🛩</div>
         <div className="flex justify-center md:justify-between px-3 pt-4">
           <Link to="/" className="link link-warning hidden md:block">
             Cambiar fecha
