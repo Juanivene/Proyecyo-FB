@@ -19,9 +19,6 @@ const ConfirmationView = () => {
 
   const [isClose, setIsClose] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
-  useEffect(() => {
-    console.log(isSubmit);
-  }, [isSubmit]);
 
   const modal = useRef();
 

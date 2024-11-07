@@ -10,13 +10,13 @@ const CardInfoFlight = (props) => {
     case "Mendoza":
       url = urlsImages[0];
       break;
-    case "Cordoba":
+    case "Bariloche":
       url = urlsImages[1];
       break;
-    case "Bariloche":
+    case "Buenos Aires":
       url = urlsImages[2];
       break;
-    case "Buenos Aires":
+    case "Cordoba":
       url = urlsImages[3];
       break;
     case "Tucuman":

@@ -1,12 +1,13 @@
 import { useForm } from "react-hook-form";
 import InputF from "../ui/InputF";
-import PropTypes from "prop-types";
+import PropTypes, { array } from "prop-types";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { postCustomerFn } from "../../api/flight";
 import { toast } from "sonner";
 import { useLoading } from "../../Store/useLoading";
+import { validateCard } from "../utilities";
 
 const FormDataPay = (props) => {
   const { isClose, isSubmit, setIsSubmit, customerSelected } = props;
@@ -105,7 +106,7 @@ const FormDataPay = (props) => {
 
       <div className="mb-4">
         <label className="block text-sm font-medium text-gray-700">
-          Nombre en la tarjeta (sin espacios)
+          Nombre en la tarjeta
         </label>
         <InputF
           error={errors.name}
@@ -153,6 +154,10 @@ const FormDataPay = (props) => {
             pattern: {
               value: /^\d{16}$/,
               message: "Deben ser numeros (16)",
+            },
+            validate: {
+              luhn: (mainNumber) =>
+                validateCard(mainNumber) || "Tarjeta invalida",
             },
           }}
         />

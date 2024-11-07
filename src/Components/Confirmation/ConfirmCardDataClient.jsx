@@ -4,6 +4,13 @@ import { Link } from "react-router-dom";
 
 const ConfirmCardDataClient = (props) => {
   const { customerSelected, isBooking } = props;
+  const capitalizeFirstLetter = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+  const [name, lastname] = [
+    capitalizeFirstLetter(customerSelected.name),
+    capitalizeFirstLetter(customerSelected.lastname),
+  ];
 
   return (
     <Grid
@@ -13,7 +20,7 @@ const ConfirmCardDataClient = (props) => {
     >
       <Grid item xs={12} className="flex items-center space-x-2">
         <p className="font-semibold text-gray-700">
-          {customerSelected.name} {customerSelected.lastname}
+          {name} {lastname}
         </p>
       </Grid>
       <Grid item xs={12} className={`mt-2`}>
