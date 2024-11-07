@@ -5,3 +5,20 @@ export const urlsImages = [
   "https://www.spain.info/.content/imagenes/cabeceras-grandes/andalucia/vistas-cordoba-s158982617.jpg",
   "https://www.tucumanturismo.gob.ar/public/img/1920x650-Destinos-TafidelValle-Desktop.jpg",
 ];
+export const validateCard = (n) => {
+  let arrayInvert = n.split("").reverse();
+  let sum = 0;
+  let isPair = false;
+  for (let i = arrayInvert.length - 1; i >= 0; i--) {
+    let digito = Number(arrayInvert[i]);
+    if (isPair) {
+      digito = digito * 2;
+      if (digito > 9) {
+        digito = digito - 9;
+      }
+    }
+    sum = sum + digito;
+    isPair = !isPair;
+  }
+  return sum % 10 === 0;
+};
