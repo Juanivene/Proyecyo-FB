@@ -15,7 +15,7 @@ const InfoCard = (props) => {
 
 export default InfoCard;
 InfoCard.propTypes = {
-  icon: PropTypes.string.isRequired,
+  icon: PropTypes.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
 };
