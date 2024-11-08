@@ -17,7 +17,7 @@ const PayCardInfo = (props) => {
   if (isLoading) {
     return <div className="skeleton h-80 w-full sticky top-20"></div>;
   }
-  if (isError) {
+  if (id===null||isError) {
     return <PayCardError />;
   }
 

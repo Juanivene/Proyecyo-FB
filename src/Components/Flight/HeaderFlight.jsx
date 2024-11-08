@@ -1,11 +1,7 @@
 import PropTypes from "prop-types";
 
 const HeaderFlight = (props) => {
-  const { origin, destination, isError } = props;
-
-  if (isError) {
-    return null;
-  }
+  const { origin, destination } = props;
 
   return (
     <div className=" bg-base-200 shadow-md p-4 rounded-lg flex flex-col items-center">
@@ -30,5 +26,4 @@ export default HeaderFlight;
 HeaderFlight.propTypes = {
   origin: PropTypes.string.isRequired,
   destination: PropTypes.string.isRequired,
-  isError: PropTypes.bool.isRequired,
 };

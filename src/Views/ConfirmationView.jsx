@@ -30,15 +30,22 @@ const ConfirmationView = () => {
       showConfirmButton: true,
       cancelButtonText: "No, cancelar",
       confirmButtonText: "Si, salir",
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
       text: "Seguro que quiere cancelar el pago?",
     }).then((res) => {
       if (res.isConfirmed) {
-        modal.current.close();
         setIsClose(true);
+        modal.current.close();
       } else {
         modal.current.showModal();
       }
     });
+  };
+
+  const showModal = () => {
+    modal.current.showModal();
+    setIsClose(false);
   };
 
   if (!customerSelected) {
@@ -65,7 +72,7 @@ const ConfirmationView = () => {
           </Link>
           <button
             className="btn btn-wide hidden lg:block"
-            onClick={() => modal.current.showModal()}
+            onClick={() => showModal()}
           >
             ¡Ir al pago!
           </button>
@@ -97,7 +104,7 @@ const ConfirmationView = () => {
         <div className="flex justify-center mt-4">
           <button
             className="btn btn-wide block lg:hidden"
-            onClick={() => modal.current.showModal()}
+            onClick={() => showModal()}
           >
             ¡Ir al pago!
           </button>

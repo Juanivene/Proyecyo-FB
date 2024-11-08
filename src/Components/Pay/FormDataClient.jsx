@@ -80,7 +80,6 @@ const FormDataClient = (props) => {
       phonenumber,
       flightSelected
     );
-    console.log(customer);
 
     const updatedCustomers = [...customersInLs];
     if (customerSelected) {

@@ -19,7 +19,6 @@ const FormDataPay = (props) => {
     reset,
     formState: { errors },
   } = useForm();
-
   useEffect(() => {
     if (isClose) {
       reset({
