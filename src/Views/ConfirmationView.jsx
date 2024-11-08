@@ -43,6 +43,11 @@ const ConfirmationView = () => {
     });
   };
 
+  const showModal = () => {
+    modal.current.showModal();
+    setIsClose(false);
+  };
+
   if (!customerSelected) {
     return <Error404 />;
   }
@@ -67,7 +72,7 @@ const ConfirmationView = () => {
           </Link>
           <button
             className="btn btn-wide hidden lg:block"
-            onClick={() => modal.current.showModal()}
+            onClick={() => showModal()}
           >
             ¡Ir al pago!
           </button>
@@ -99,7 +104,7 @@ const ConfirmationView = () => {
         <div className="flex justify-center mt-4">
           <button
             className="btn btn-wide block lg:hidden"
-            onClick={() => modal.current.showModal()}
+            onClick={() => showModal()}
           >
             ¡Ir al pago!
           </button>
