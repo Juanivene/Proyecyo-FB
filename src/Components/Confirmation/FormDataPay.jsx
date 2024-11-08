@@ -21,6 +21,7 @@ const FormDataPay = (props) => {
   } = useForm();
 
   useEffect(() => {
+    
     if (isClose) {
       reset({
         name: "",

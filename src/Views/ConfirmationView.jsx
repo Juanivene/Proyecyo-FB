@@ -30,11 +30,13 @@ const ConfirmationView = () => {
       showConfirmButton: true,
       cancelButtonText: "No, cancelar",
       confirmButtonText: "Si, salir",
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
       text: "Seguro que quiere cancelar el pago?",
     }).then((res) => {
       if (res.isConfirmed) {
-        modal.current.close();
         setIsClose(true);
+        modal.current.close();
       } else {
         modal.current.showModal();
       }

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 w-full z-50 bg-amber-300">
+    <header className="sticky top-0 w-full z-50 bg-gradient-to-r bg-amber-300 ">
       <div className="flex items-center justify-between py-2">
         {/* hamburguesa */}
         <div className="flex-none md:hidden ">

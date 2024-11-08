@@ -28,6 +28,7 @@ Para ejecutar el proyecto en tu máquina local, sigue estos pasos:
 
    Ejemplo de archivo `.env`: VITE_BACKEND_URL=http://localhost:3001
 
+
 4. Una vez completado, puedes ejecutar el proyecto de la siguiente manera:
 - Inicia el entorno de desarrollo:
   npm run dev
