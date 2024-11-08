@@ -85,6 +85,8 @@ const FormDataPay = (props) => {
               setTimeout(() => {
                 window.location.href = `http://localhost:5173/reservation?&customer=${customerSelected.id}`;
               }, 1000);
+            } else {
+              window.location.href = `http://localhost:5173`;
             }
           });
           setLoading(false);
