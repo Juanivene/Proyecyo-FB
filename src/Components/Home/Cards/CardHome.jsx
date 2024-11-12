@@ -12,7 +12,16 @@ const CardHome = (props) => {
         />
         <h3 className="text-lg font-bold text-gray-800">{title}</h3>
       </div>
-      <p className="text-gray-600">{description}</p>
+      {title === "CONSULTÁ TU RESERVA" ? (
+        <p className="text-gray-600">
+          {description}{" "}
+          <a className="link link-warning" href="/reservation">
+            Tú reserva
+          </a>
+        </p>
+      ) : (
+        <p className="text-gray-600">{description}</p>
+      )}
     </div>
   );
 };

@@ -339,146 +339,14 @@
   ],
   "customers": [
     {
-      "id": "5de30b14-18fc-4793-8f99-a6d3463fdaa3",
-      "name": "juani",
-      "lastname": "veneziano",
-      "birthdate": "2003-11-27",
-      "dni": "45127062",
-      "email": "venezianojuani@gmail.com",
-      "gender": "male",
-      "nationality": "argentina",
-      "phonenumber": "3453588888",
-      "flightSelected": {
-        "id": "FO1235",
-        "origin": "Tucuman",
-        "destination": "Buenos Aires",
-        "aitaCode": [
-          "TUC",
-          "AEP"
-        ],
-        "date": "2024-12-01",
-        "hour": [
-          "12:30",
-          "15:00"
-        ],
-        "duration": "2h 10m",
-        "price": "$99.999",
-        "tasa": "$19.999",
-        "airport": [
-          "Aropuerto internacional Benjamin Matienzo",
-          "Aeroparque Internacional Jorge Newbery"
-        ]
-      },
-      "idBooking": "398119"
-    },
-    {
-      "id": "5de30b14-18fc-4793-8f99-a6d3463fdaa3",
-      "name": "juani",
-      "lastname": "veneziano",
-      "birthdate": "2003-11-27",
-      "dni": "45127062",
-      "email": "venezianojuani@gmail.com",
-      "gender": "male",
-      "nationality": "argentina",
-      "phonenumber": "3453588888",
-      "flightSelected": {
-        "id": "FO1235",
-        "origin": "Tucuman",
-        "destination": "Buenos Aires",
-        "aitaCode": [
-          "TUC",
-          "AEP"
-        ],
-        "date": "2024-12-01",
-        "hour": [
-          "12:30",
-          "15:00"
-        ],
-        "duration": "2h 10m",
-        "price": "$99.999",
-        "tasa": "$19.999",
-        "airport": [
-          "Aropuerto internacional Benjamin Matienzo",
-          "Aeroparque Internacional Jorge Newbery"
-        ]
-      },
-      "idBooking": "911740"
-    },
-    {
-      "id": "5fb9557d-9de7-420a-b4d8-ca5382a5fccb",
-      "name": "eze",
+      "id": "61ad3883-cb45-4d3e-bfe8-c80a069bd1ba",
+      "name": "ezequiel",
       "lastname": "amin",
-      "birthdate": "2002-04-02",
-      "dni": "45127062",
-      "email": "ezeamin@gmail.com",
-      "gender": "male",
-      "nationality": "uruguay",
-      "phonenumber": "3453588888",
-      "flightSelected": {
-        "id": "FO1234",
-        "origin": "Tucuman",
-        "destination": "Buenos Aires",
-        "aitaCode": [
-          "TUC",
-          "AEP"
-        ],
-        "date": "2024-12-01",
-        "hour": [
-          "21:00",
-          "23:30"
-        ],
-        "duration": "2h 30m",
-        "price": "$80.999",
-        "tasa": "$16.199",
-        "airport": [
-          "Aropuerto internacional Benjamin Matienzo",
-          "Aeroparque Internacional Jorge Newbery"
-        ]
-      },
-      "idBooking": "556468"
-    },
-    {
-      "id": "1ffbaa6e-0e0f-4ffe-b97c-ce4bd8ffd1e1",
-      "name": "julieta",
-      "lastname": "veneziano",
-      "birthdate": "2004-02-27",
+      "birthdate": "2003-11-27",
       "dni": "45127062",
       "email": "venezianojuani@gmail.com",
-      "gender": "female",
+      "gender": "male",
       "nationality": "argentina",
-      "phonenumber": "3453588888",
-      "flightSelected": {
-        "id": "FO2235",
-        "origin": "Mendoza",
-        "destination": "Buenos Aires",
-        "aitaCode": [
-          "MDZ",
-          "AEP"
-        ],
-        "date": "2024-12-01",
-        "hour": [
-          "21:00",
-          "22:45"
-        ],
-        "duration": "1h 45m",
-        "price": "$99.999",
-        "tasa": "$19.999",
-        "airport": [
-          "Aeropuerto Internacional El Plumerillo",
-          "Aeroparque Internacional Jorge Newbery"
-        ]
-      },
-      "idBooking": "656687"
-    },
-    {
-      "id": "63c2feea-d744-4a1f-ab3f-3fae09b2b29a",
-      "name": "mariana",
-      "lastname": "rivadeneira",
-      "birthdate": "1999-09-19",
-      "dni": "11111111",
-      "email": "may@gmail.com",
-      "gender": "other",
-      "nationality": "bolivia",
       "phonenumber": "3453588888",
       "flightSelected": {
         "id": "FO1234",
@@ -501,53 +369,20 @@
           "Aeroparque Internacional Jorge Newbery"
         ]
       },
-      "idBooking": "816841"
+      "idBooking": "904110"
     },
     {
-      "id": "cce41a75-ec8b-4181-b613-dd048b94b9fe",
-      "name": "raul",
-      "lastname": "veneziano",
-      "birthdate": "1983-02-17",
-      "dni": "12345678",
-      "email": "tuc_raul@ss.com",
-      "gender": "male",
-      "nationality": "argentina",
-      "phonenumber": "3814567765",
-      "flightSelected": {
-        "id": "FO7236",
-        "origin": "Buenos Aires",
-        "destination": "Bariloche",
-        "aitaCode": [
-          "AEP",
-          "BRC"
-        ],
-        "date": "2024-12-01",
-        "hour": [
-          "12:30",
-          "14:45"
-        ],
-        "duration": "2h 15m",
-        "price": "$73.999",
-        "tasa": "$16.199",
-        "airport": [
-          "Aeroparque Internacional Jorge Newbery",
-          "Aeropuerto Internacional Teniente Luis Candelaria"
-        ]
-      },
-      "idBooking": "808817"
-    },
-    {
-      "id": "5f99107d-fd4f-4fb6-a4df-92acfc6d5b7a",
+      "id": "2e0d9673-8cb1-4e44-b432-15d4adbe2cd0",
       "name": "juani",
       "lastname": "veneziano",
-      "birthdate": "2003-11-12",
+      "birthdate": "2003-11-27",
       "dni": "45127062",
       "email": "venezianojuani@gmail.com",
       "gender": "male",
-      "nationality": "chile",
+      "nationality": "argentina",
       "phonenumber": "1111111111",
       "flightSelected": {
-        "id": "FO1234",
+        "id": "FO1235",
         "origin": "Tucuman",
         "destination": "Buenos Aires",
         "aitaCode": [
@@ -556,18 +391,84 @@
         ],
         "date": "2024-12-01",
         "hour": [
-          "21:00",
-          "23:30"
+          "12:30",
+          "15:00"
         ],
-        "duration": "2h 30m",
-        "price": "$80.999",
-        "tasa": "$16.199",
+        "duration": "2h 10m",
+        "price": "$99.999",
+        "tasa": "$19.999",
         "airport": [
           "Aropuerto internacional Benjamin Matienzo",
           "Aeroparque Internacional Jorge Newbery"
         ]
       },
-      "idBooking": "234537"
+      "idBooking": "795088"
+    },
+    {
+      "id": "28adbd78-2edb-49cf-be65-a0fa4f1126a1",
+      "name": "juani",
+      "lastname": "perez",
+      "birthdate": "1999-02-21",
+      "dni": "11111111",
+      "email": "venezianojuani@gmail.com",
+      "gender": "other",
+      "nationality": "bolivia",
+      "phonenumber": "1234567890",
+      "flightSelected": {
+        "id": "FO3235",
+        "origin": "Bariloche",
+        "destination": "Buenos Aires",
+        "aitaCode": [
+          "BRC",
+          "AEP"
+        ],
+        "date": "2024-12-01",
+        "hour": [
+          "17:30",
+          "19:45"
+        ],
+        "duration": "2h 15m",
+        "price": "$65.999",
+        "tasa": "$12.199",
+        "airport": [
+          " Aeropuerto Internacional Teniente Luis Candelaria",
+          "Aeroparque Internacional Jorge Newbery"
+        ]
+      },
+      "idBooking": "740926"
+    },
+    {
+      "id": "2fc3bd01-1d10-4bc9-9d4c-ab11735029e7",
+      "name": "marito",
+      "lastname": "borges",
+      "birthdate": "1998-01-21",
+      "dni": "45127063",
+      "email": "mb@g.com",
+      "gender": "male",
+      "nationality": "uruguay",
+      "phonenumber": "3453588882",
+      "flightSelected": {
+        "id": "FO4234",
+        "origin": "Buenos Aires",
+        "destination": "Tucuman",
+        "aitaCode": [
+          "AEP",
+          "TUC"
+        ],
+        "date": "2024-12-01",
+        "hour": [
+          "14:00",
+          "16:30"
+        ],
+        "duration": "2h 30m",
+        "price": "$30.999",
+        "tasa": "$7.199",
+        "airport": [
+          "Aeroparque Internacional Jorge Newbery",
+          "Aropuerto internacional Benjamin Matienzo"
+        ]
+      },
+      "idBooking": "897649"
     }
   ]
 }

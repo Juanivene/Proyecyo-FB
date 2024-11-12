@@ -28,7 +28,7 @@ const DestinationCard = (props) => {
 
 export default DestinationCard;
 DestinationCard.propTypes = {
-  city: PropTypes,
-  image: PropTypes,
-  price: PropTypes,
+  city: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
 };
