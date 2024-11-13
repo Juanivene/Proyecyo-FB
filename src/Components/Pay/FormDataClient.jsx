@@ -4,42 +4,58 @@ import Grid from "../Grid/grid";
 import { Link } from "react-router-dom";
 import { Customer } from "./Customer";
 import PropTypes from "prop-types";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { getflightSelectedFn, postCustomerFn } from "../../api/flight";
-import { toast } from "sonner";
+import { useQuery } from "@tanstack/react-query";
+import { getflightSelectedFn } from "../../api/flight";
+
 import Alert from "../ui/Alert";
+import { useEffect, useState } from "react";
+import { useLoading } from "../../Store/useLoading";
 
 const FormDataClient = (props) => {
   const { id } = props;
+  const { setLoading } = useLoading();
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const idCustomerSelected = urlParams.get("customer");
+
+  const [customersInLs, setCustomerInLs] = useState(
+    JSON.parse(localStorage.getItem("customers")) || []
+  );
+
+  useEffect(() => {
+    localStorage.setItem("customers", JSON.stringify(customersInLs));
+  }, [customersInLs]);
+
+  const customerSelected = customersInLs.find((customer) => {
+    return customer.id === idCustomerSelected;
+  });
 
   const { data: flightSelected } = useQuery({
     queryKey: [`flights-${id}`],
     queryFn: () => getflightSelectedFn(id),
   });
 
-  const queryClient = useQueryClient();
-
-  const { mutate: postCustomer } = useMutation({
-    mutationFn: postCustomerFn,
-    onSuccess: () => {
-      toast.dismiss();
-      toast.success("Datos con éxito");
-
-      queryClient.invalidateQueries({
-        queryKey: ["customers"],
-      });
-    },
-    onError: (e) => {
-      toast.dismiss();
-      toast.warning(e.message);
-    },
-  });
-
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
+
+  useEffect(() => {
+    if (customerSelected) {
+      reset({
+        name: customerSelected.name,
+        lastname: customerSelected.lastname,
+        birthdate: customerSelected.date,
+        nationality: customerSelected.nationality,
+        dni: customerSelected.dni,
+        gender: customerSelected.gender,
+        phonenumber: customerSelected.phonenumber,
+        email: customerSelected.email,
+      });
+    }
+  }, []);
 
   const onsubmit = (data) => {
     const {
@@ -48,26 +64,38 @@ const FormDataClient = (props) => {
       birthdate,
       dni,
       email,
-      genre,
+      gender,
       nationality,
       phonenumber,
     } = data;
+
     const customer = new Customer(
-      name,
-      lastname,
+      name.toLowerCase(),
+      lastname.toLowerCase(),
       birthdate,
       dni,
-      email,
-      genre,
+      email.toLowerCase(),
+      gender,
       nationality,
       phonenumber,
       flightSelected
     );
-    // postCustomer(customer);
-    const customersInLs = JSON.parse(localStorage.getItem("customers")) || [];
-    customersInLs.push(customer);
-    localStorage.setItem("customers", JSON.stringify(customersInLs));
-    window.location.href = `http://localhost:5173/confirmation?&customer=${customer.id}`;
+
+    const updatedCustomers = [...customersInLs];
+    if (customerSelected) {
+      const customerIndex = updatedCustomers.findIndex(
+        (e) => e.id === customerSelected.id
+      );
+      updatedCustomers.splice(customerIndex, 1, customer);
+    } else {
+      updatedCustomers.push(customer);
+    }
+
+    setCustomerInLs(updatedCustomers);
+    setLoading(true);
+    setTimeout(() => {
+      window.location.href = `http://localhost:5173/confirmation?&customer=${customer.id}`;
+    }, 2500);
   };
   return (
     <form
@@ -101,7 +129,7 @@ const FormDataClient = (props) => {
                 },
                 maxLength: {
                   value: 30,
-                  message: "Debe contener 20 caracteres como maximo",
+                  message: "Debe contener 30 caracteres como maximo",
                 },
                 pattern: {
                   value: /^[a-zA-Z\s]+$/,
@@ -222,14 +250,14 @@ const FormDataClient = (props) => {
           register={register}
         />
       </div>
-      <div className="divider">🧦</div>
+      <div className="divider">🛩</div>
       <div className="card-body">
         <h2 className="card-title text-xl font-bold text-gray-800">Genero</h2>
         <select
-          name="genre"
+          name="gender"
           className="select select-bordered w-full"
           defaultValue="Genero"
-          {...register("genre", {
+          {...register("gender", {
             required: " Selecciona un genero",
           })}
         >
@@ -238,7 +266,7 @@ const FormDataClient = (props) => {
           <option value="female">Femenino</option>
           <option value="other">Otro</option>
         </select>
-        {errors.genre ? <Alert error={errors.genre.message} /> : ""}
+        {errors.gender ? <Alert error={errors.gender.message} /> : ""}
         <p>¿Por qué queremos saber esto?</p>
         <a
           href="https://homers-webpage.vercel.app/"
@@ -247,7 +275,7 @@ const FormDataClient = (props) => {
           Consulta nuestra web sobre accesebilidad para esta informacion
         </a>
       </div>
-      <div className="divider">🍕</div>
+      <div className="divider">🛩</div>
       <div className="card-body">
         <h2 className="card-title text-xl font-bold text-gray-800">
           Tus datos de contacto
@@ -259,7 +287,7 @@ const FormDataClient = (props) => {
         <Grid container gap={2}>
           <Grid item xs={6}>
             <InputF
-              error={errors.telefono}
+              error={errors.phonenumber}
               placeHolder={`Numero de telefono`}
               name="phonenumber"
               maxL={10}
@@ -275,11 +303,6 @@ const FormDataClient = (props) => {
               }}
               register={register}
             />
-            {errors.phonenumber ? (
-              <Alert error={errors.phonenumber.message} />
-            ) : (
-              ""
-            )}
           </Grid>
           <Grid item xs={6}>
             <InputF
@@ -300,7 +323,7 @@ const FormDataClient = (props) => {
             />
           </Grid>
         </Grid>
-        <div className="divider">🍔</div>
+        <div className="divider">🛩</div>
         <div className="flex justify-center md:justify-between px-3 pt-4">
           <Link to="/" className="link link-warning hidden md:block">
             Cambiar fecha

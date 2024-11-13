@@ -3,12 +3,9 @@ import Grid from "../Grid/grid";
 import PayCardInfo from "./PayCardInfo";
 import FormDataClient from "./FormDataClient";
 import FooterInfoFlight from "../Flight/FooterInfoFlight";
-import { useMediaQuery } from "react-responsive";
 
 const PayContent = (props) => {
   const { origin, id } = props;
-
-  const isMediumScreen = useMediaQuery({ maxWidth: 861, maxHeight: 641 });
 
   return (
     <Grid container gap={3} className={`m-10`}>
@@ -26,11 +23,9 @@ const PayContent = (props) => {
         <FormDataClient id={id} />
       </Grid>
 
-      {isMediumScreen ? null : (
-        <Grid item xs={12} sm={12} md={12} lg={4}>
-          <PayCardInfo id={id} />
-        </Grid>
-      )}
+      <Grid item xs={12} sm={12} md={12} lg={4} className={`hidden md:block`}>
+        <PayCardInfo id={id} />
+      </Grid>
 
       <Grid item xs={12}>
         <FooterInfoFlight origin={origin} />

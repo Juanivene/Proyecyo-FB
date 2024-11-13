@@ -1,11 +1,11 @@
-import Carousel from "../Components/Home/Carousel";
-import FormDetailFlight from "../Components/Home/FormDetailFlight";
+import Carousel from "../Components/Home/Carousel/Carousel";
+import ContentHome from "../Components/Home/ContentHome";
 
 const HomeView = () => {
   return (
     <>
       <Carousel />
-      <FormDetailFlight />
+      <ContentHome />
     </>
   );
 };

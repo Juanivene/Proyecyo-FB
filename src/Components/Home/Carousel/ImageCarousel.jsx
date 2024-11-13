@@ -7,7 +7,7 @@ const ImageCarousel = (props) => {
     <div id={id} className="carousel-item relative w-full">
       <img
         src={url}
-        className="w-full max-h-48 md:max-h-64 lg:max-h-80 object-cover"
+        className="w-full max-h-48 md:max-h-64 lg:max-h-96 object-cover"
         alt="carousel item"
       />
 

@@ -12,9 +12,12 @@ import NewError from "./NewError";
 import Swal from "sweetalert2";
 import NoFlights from "./NoFlights";
 import { getFlightFn } from "../../api/flight";
+import { useLoading } from "../../Store/useLoading";
 
 const ContentFlight = (props) => {
   const { origin, destination, date } = props;
+
+  const { setLoading } = useLoading();
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -44,7 +47,10 @@ const ContentFlight = (props) => {
         showConfirmButton: false,
       });
     } else {
-      window.location.href = `http://localhost:5173/pay?&origin=${flightSelected.origin}&flight=${flightSelected.id}`;
+      setLoading(true);
+      setTimeout(() => {
+        window.location.href = `http://localhost:5173/pay?&origin=${flightSelected.origin}&flight=${flightSelected.id}`;
+      }, 2000);
     }
   };
 
@@ -66,9 +72,10 @@ const ContentFlight = (props) => {
     return <NoFlights />;
   }
 
+
   return (
     <Grid container gap={8} className="my-">
-      <Grid item xs={12} lg={8}>
+      <Grid item xs={12} md={12} lg={12} xl={8}>
         <div className="mb-2">
           <h1 className="text-2xl font-bold px-3 py-2">{dateString}</h1>
         </div>
@@ -96,12 +103,13 @@ const ContentFlight = (props) => {
             </button>
           </div>
         </div>
-        <div className="mx-10 mb-7">
+        <div className="mx-10 my-5 ">
           <FooterInfoFlight origin={origin} />
         </div>
       </Grid>
-      <Grid item xs={1} md={1} lg={1}>
-        <div className="hidden md:block my-14">
+
+      <Grid item xs={4} className="hidden lg:block">
+        <div className="my-14 sticky top-20">
           <CardInfoFlight
             flightSelected={flightSelected}
             dateString={dateString}

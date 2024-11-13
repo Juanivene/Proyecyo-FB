@@ -7,23 +7,24 @@ const CardInfoFlight = (props) => {
 
   let url;
   switch (flightSelected.destination) {
-    case "Buenos Aires":
-      url = urlsImages[0];
-      break;
     case "Mendoza":
-      url = urlsImages[1];
+      url = urlsImages[0];
       break;
     case "Bariloche":
+      url = urlsImages[1];
+      break;
+    case "Buenos Aires":
       url = urlsImages[2];
       break;
-    case "Tucuman":
+    case "Cordoba":
       url = urlsImages[3];
       break;
-    case "Cordoba":
+    case "Tucuman":
       url = urlsImages[4];
       break;
+
     default:
-      url = urlsImages[0];
+      url = urlsImages[3];
   }
   return (
     <section className="w-full md:w-64 lg:w-96 shadow-xl rounded-b-xl">
@@ -48,10 +49,10 @@ const CardInfoFlight = (props) => {
         </div>
       </div>
       <div className="card-body	bg-slate-200 rounded-b-xl">
-        <h2 className="card-title">TOTAL:</h2>
+        <h2 className="card-title">PRECIO:</h2>
         <button className="btn">
           ARS
-          <div className="badge badge-warning">${flightSelected.price}</div>
+          <div className="badge badge-warning">{flightSelected.price}</div>
         </button>
       </div>
     </section>

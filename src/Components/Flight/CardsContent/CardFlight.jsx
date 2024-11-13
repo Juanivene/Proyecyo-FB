@@ -43,7 +43,7 @@ const CardFlight = (props) => {
           isSelected ? "btn-success" : "btn-warning"
         } text-lg mt-8 mx-2`}
       >
-        Tarifa: ${flightsDay.price}
+        Tarifa: {flightsDay.price}
       </button>
     </div>
   );

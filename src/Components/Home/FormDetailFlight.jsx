@@ -1,7 +1,9 @@
 import { useForm } from "react-hook-form";
-import Alert from "./Alert";
+import { useLoading } from "../../Store/useLoading";
+import Alert from "../ui/Alert";
 
 const FormDetailFlight = () => {
+  const { setLoading } = useLoading();
   const {
     register,
     handleSubmit,
@@ -21,7 +23,10 @@ const FormDetailFlight = () => {
 
   const onSubmit = (data) => {
     const { date, destination, origin } = data;
-    window.location.href = `http://localhost:5173/flight?origen=${origin}&destino=${destination}&fecha=${date}`;
+    setLoading(true);
+    setTimeout(() => {
+      window.location.href = `http://localhost:5173/flight?origen=${origin}&destino=${destination}&fecha=${date}`;
+    }, 3000);
   };
 
   return (
@@ -51,11 +56,6 @@ const FormDetailFlight = () => {
               <option value="Buenos Aires">Buenos Aires</option>
               <option value="Cordoba">Cordoba</option>
             </select>
-            {errors.origin && (
-              <div className="mt-2">
-                <Alert messege={errors.origin?.message} />
-              </div>
-            )}
           </div>
 
           <div className="form-control">
@@ -79,9 +79,7 @@ const FormDetailFlight = () => {
               <option value="Cordoba">Cordoba</option>
             </select>
             {errors.destination && (
-              <div className="mt-2">
-                <Alert messege={errors.destination?.message} />
-              </div>
+              <Alert error={errors.destination?.message} />
             )}
           </div>
 
@@ -105,11 +103,7 @@ const FormDetailFlight = () => {
                 },
               })}
             />
-            {errors.date && (
-              <div className="mt-2">
-                <Alert messege={errors.date?.message} />
-              </div>
-            )}
+            {errors.date && <Alert error={errors.date?.message} />}
           </div>
 
           <div className="form-control">
